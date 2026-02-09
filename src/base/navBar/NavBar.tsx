@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { clx } from "@/utlities/clx";
 
 const NavBar: React.FC = () => {
