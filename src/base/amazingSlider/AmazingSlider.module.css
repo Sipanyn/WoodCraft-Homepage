@@ -1,0 +1,44 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 20rem; /* h-80 */
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: #8a6a47;
+  z-index: 0;
+}
+
+:global(.dark) .wrapper {
+  background-color: #404040;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+}
+
+.sliderNavigateBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  background-color: white;
+  color: #374151; /* gray-700 */
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+:global(.dark) .sliderNavigateBtn {
+  background-color: #3d3d3d; /* dark mode */
+  color: white;
+}
+
+.sliderNavigateBtn:hover {
+  color: #8a6a47; /* blue-500 */
+}

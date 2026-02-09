@@ -1,0 +1,39 @@
+.article_box {
+  height: auto;
+  width: 16rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background-color: white;
+  padding: 0.5rem;
+  transition: all 400ms;
+  &:hover {
+    transform: translateY(-10px);
+  }
+  margin-top: 10px;
+}
+
+:global(.dark) .article_box {
+  background-color: #404040;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .article_box {
+    width: 310px;
+  }
+}
+
+.article_box_img {
+  height: 10rem;
+  width: 100%;
+  border-bottom-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+
+  object-fit: contain;
+}
+
+/* @media (min-width: 1024px) {
+  .article_box_img {
+    height: 180px;
+  }
+} */

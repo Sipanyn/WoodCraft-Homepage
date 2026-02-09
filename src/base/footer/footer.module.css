@@ -1,0 +1,17 @@
+.footer_title {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.icon {
+  background-color: rgba(159, 128, 83, 0.5);
+  &:hover {
+    background-color: #6e513a;
+  }
+}
+:global(.dark) .icon {
+  background-color: #27272a;
+}
+.bottom_bar {
+  background-color: rgba(159, 128, 83, 0.5);
+}

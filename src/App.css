@@ -1,7 +1,147 @@
 @import "tailwindcss";
+:root {
+  --font-sans: "MyFont";
+}
+@custom-variant dark (&:where(.dark, .dark *));
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 } */
+@font-face {
+  font-family: "MyFont";
+  src: url("/public/fonts/SNPro-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@theme {
+  /* === WOODCRAFT COLOR PALETTE === */
+
+  --color-wood: #b68a60; /* Primary wood tone — use for secondary buttons, highlights, product price */
+  --color-wood-dark: #8a6a47; /* Dark wood — perfect for header/nav background or strong accents */
+  --color-wood-light: #d9bfa5; /* Light wood — subtle borders, soft backgrounds, card accents */
+
+  --color-neutral-bg: #f7f4ef; /* Main page background — clean, premium, minimal */
+  --color-surface: #ece7e1; /* Card background — product cards, sections, containers */
+
+  --color-text-dark: #2b2b2b; /* Primary text — titles, headings, strong readable text */
+  --color-text-muted: #6f6f6f; /* Muted text — descriptions, subtitles, small UI labels */
+
+  --color-accent: #4a7c59; /* Accent green — primary buttons, AI features, active icons */
+  --color-accent-light: #6faf82; /* Light accent — hover states, badges, soft highlights */
+}
+
+@layer utilities {
+  .container {
+    @apply w-full mx-auto;
+
+    /* Base max-width */
+    max-width: 360px;
+  }
+
+  @media (min-width: 480px) {
+    .container {
+      max-width: 480px;
+      padding-inline: 1rem;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+      padding-inline: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1536px;
+      padding-inline: 6rem;
+    }
+  }
+}
+
+/* slider */
+.swiper-pagination-wrapper {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  width: 9rem;
+  height: 2.25rem;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background-color: #ffffff;
+  transition: all ease 500ms;
+}
+.dark .swiper-pagination-wrapper {
+  background-color: #262626;
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #8a6a47;
+}
+/* Navigation buttons */
+.slider-navigate_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  color: #374151; /* gray-700 */
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.slider-navigate_btn:hover {
+  color: #4a7c59; /* blue-500 */
+}
+
+/* Disabled / invisible button */
+.invisable-btn {
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* Timer box */
+.timer-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding-top: 0.25rem;
+  border-radius: 0.5rem;
+  background-color: red;
+  color: #4a7c59;
+}

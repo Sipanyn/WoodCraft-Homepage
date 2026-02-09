@@ -1,0 +1,64 @@
+.menu_item::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background: #d9bfa5;
+  transition: transform 0.4s ease;
+}
+.menu_item:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+/* sub menu */
+.has_submenu {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 200%;
+  left: 0;
+  min-width: 180px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  padding: 12px 8px;
+  z-index: 100;
+}
+
+.has_submenu:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.submenu li a {
+  display: block;
+  width: 90%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.submenu li a:hover {
+  /* --color-wood-light */
+  background: rgba(217, 191, 165, 0.2);
+  transform: translateX(8px) scale(1.05);
+}
+
+.has_submenu a > i {
+  transition: transform 0.5s ease;
+}
+
+.has_submenu:hover a > i {
+  transform: rotate(180deg);
+}
