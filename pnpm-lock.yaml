@@ -13,9 +13,7 @@ importers:
       bootstrap-icons:
         specifier: ^1.13.1
         version: 1.13.1
-      lucide-react:
-        specifier: ^0.563.0
-        version: 0.563.0
+
       pnpm:
         specifier: ^10.28.2
         version: 10.28.2
