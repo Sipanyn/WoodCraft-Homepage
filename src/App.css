@@ -1,6 +1,7 @@
 @import "tailwindcss";
 :root {
   --font-sans: "MyFont";
+  --canvas-bg: #ffffff;
 }
 @custom-variant dark (&:where(.dark, .dark *));
 /* #root {
@@ -144,4 +145,37 @@
   border-radius: 0.5rem;
   background-color: red;
   color: #4a7c59;
+}
+
+/* Chrome, Edge, Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  --sb-size: 10px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #a6a7a8;
 }

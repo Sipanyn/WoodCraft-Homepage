@@ -2,7 +2,6 @@ import Header from "@/base/header/Header";
 import Classification from "../classification/Classification";
 import Newest from "../newest/Newest";
 import BestSelling from "../bestSelling/BestSelling";
-import MostPopular from "../mostPopular/MostPopular";
 import PopularArticle from "../popularArticle/PopularArticle";
 import Banner from "@/base/banner/Banner";
 import Banners from "../banners/Banners";
@@ -14,7 +13,7 @@ import { useCountdown } from "@/hooks/useCountdown";
 // @ts-ignore
 import OfferIcon from "@/svgs/OfferIcon.svg?react";
 // @ts-ignore
-import Amazings from "@/svgs/Amazings.svg?react";
+// import Amazings from "@/svgs/Amazings.svg?react";
 import Brands from "../brands/Brands";
 import Features from "../features/Features";
 import Footer from "@/base/footer/Footer";

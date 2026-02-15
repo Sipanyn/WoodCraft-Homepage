@@ -28,5 +28,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "src/q/s"]
+  "include": ["src", "src/q/s", "src/aiService/geminiTypes.ts"]
 }

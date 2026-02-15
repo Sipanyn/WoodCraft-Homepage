@@ -1,8 +1,12 @@
-const AiButton: React.FC = () => {
+import type React from "react";
+type AiButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+const AiButton: React.FC<React.FC<AiButtonProps>> = ({ ...props }) => {
   return (
-    <div className="fixed right-5 bottom-3 z-50">
-      <button
-        className="animate-bounce
+    <button
+      {...props}
+      className="
+        fixed right-5 bottom-3 z-50
+        animate-bounce
     flex items-center gap-2
     bg-stone-200/50 dark:bg-neutral-700/50
     backdrop-blur-xl
@@ -15,11 +19,10 @@ const AiButton: React.FC = () => {
     hover:scale-105
     focus:outline-none focus:ring-2 focus:ring-wood/60
     cursor-pointer"
-      >
-        <p className="hidden sm:block">Start creating by</p>
-        <i className="bi bi-robot text-2xl flex justify-center items-center"></i>
-      </button>
-    </div>
+    >
+      <p className="hidden sm:block">Start creating by</p>
+      <i className="bi bi-robot text-2xl flex justify-center items-center"></i>
+    </button>
   );
 };
 

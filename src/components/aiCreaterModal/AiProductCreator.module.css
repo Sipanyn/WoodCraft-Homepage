@@ -1,0 +1,20 @@
+.custom_scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.custom_scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.custom_scrollbar::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+  padding-top: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a6a7a8;
+}
+.custom-scrollbar {
+  overflow-y: overlay; /* optional Chrome/Edge only */
+}
