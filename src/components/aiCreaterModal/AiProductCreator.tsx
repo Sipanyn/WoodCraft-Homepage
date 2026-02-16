@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   Loader2,
-  // PenTool,
-  // Eraser,
+  PenTool,
+  Eraser,
   // Camera,
   CheckCircle,
   LucideSparkle,
@@ -134,19 +134,18 @@ const DrawingCanvas: React.FC<{
   useEffect(() => {
     const canvas = canvasRef.current!;
     const ctx = canvas.getContext("2d")!;
-    canvas.style.width = "100%"; // CSS size
-    // canvas.width = canvas.parentElement!.clientWidth;
-    canvas.style.height = "100%";
-    canvas.style.minHeight = "240px";
 
-    // 1️⃣ Set styles FIRST
+    // ✅ Set canvas size to match parent
+    const parent = canvas.parentElement!;
+    canvas.width = parent.clientWidth;
+    canvas.height = parent.clientHeight;
+
+    // Set initial canvas background
     ctx.fillStyle = theme === "dark" ? "#404040" : "white";
     ctx.strokeStyle = theme === "dark" ? "white" : "black";
     ctx.lineWidth = 3;
-
-    // 2️⃣ Then draw
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-  }, [theme]); // important so it updates when theme changes
+  }, [theme]);
 
   const pos = (e: React.MouseEvent | React.TouchEvent) => {
     const r = canvasRef.current!.getBoundingClientRect();
@@ -164,6 +163,15 @@ const DrawingCanvas: React.FC<{
     };
   };
 
+  const clearCanvas = () => {
+    const canvas = canvasRef.current!;
+    const ctx = canvas.getContext("2d")!;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = theme === "dark" ? "#404040" : "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    onSave(canvas.toDataURL());
+  };
+
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-2 text-sm font-bold text-black dark:text-white pl-1.5">
@@ -176,6 +184,8 @@ const DrawingCanvas: React.FC<{
         className="rounded-2xl border border-gray-200 bg-white dark:bg-neutral-700 shadow-sm cursor-crosshair touch-none"
         onMouseDown={(e) => {
           const ctx = canvasRef.current!.getContext("2d")!;
+          ctx.globalCompositeOperation = "source-over";
+          ctx.lineWidth = 3;
           const p = pos(e);
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
@@ -203,7 +213,6 @@ const DrawingCanvas: React.FC<{
         }}
         onTouchMove={(e) => {
           if (!drawing) return;
-          e.preventDefault();
           const ctx = canvasRef.current!.getContext("2d")!;
           const p = pos(e);
           ctx.lineTo(p.x, p.y);
@@ -214,6 +223,16 @@ const DrawingCanvas: React.FC<{
           onSave(canvasRef.current!.toDataURL());
         }}
       />
+
+      <div className="flex gap-2 justify-end">
+        <button
+          type="button"
+          onClick={clearCanvas}
+          className="p-2 rounded-lg border border-wood hover:bg-wood text-wood hover:text-white cursor-pointer transition "
+        >
+          <Eraser size={16} />
+        </button>
+      </div>
     </div>
   );
 };
@@ -315,22 +334,23 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
 
           {/* PROMPT STEP */}
           {step === ProductStep.PROMPT && (
-            <div className="flex flex-col items-center gap-3.5">
-              {/* left + right +text */}
+            <div className="flex flex-col items-center gap-3.5 w-full h-full">
+              {/* top text */}
               <div className="flex flex-col">
-                <p className=" text-gray-400 text-center">
+                <p className="text-gray-400 text-center">
                   Write or draw whatever is on your mind in English
                 </p>
               </div>
+
               {/* left + right */}
-              <div className="flex flex-col sm:items-baseline sm:flex-row gap-6 items-center w-full">
-                {/* Left */}
-                <div className="space-y-2 flex flex-col w-full">
-                  <p className="text-sm font-bold text-black dark:text-white ">
+              <div className="flex flex-col sm:justify-items-normal sm:flex-row gap-6 items-stretch w-full h-full">
+                {/* Left - Textarea */}
+                <div className="space-y-2 flex flex-col flex-1 pb-10 min-h-73 min-w-98">
+                  <p className="text-sm font-bold text-black dark:text-white">
                     Text description:
                   </p>
                   <textarea
-                    className="w-full h-full  min-h-60 rounded-2xl border border-gray-200 bg-white text-stone-800 dark:text-white  dark:bg-neutral-700 p-5 outline-0 focus:border-2 focus:border-wood text-base resize-none shadow-sm"
+                    className="w-full flex-1 rounded-2xl border border-gray-200 bg-white text-stone-800 dark:text-white dark:bg-neutral-700 p-5 outline-0 focus:border-2 focus:border-wood text-base resize-none shadow-sm"
                     placeholder="For example, an eight-seater dining table with rounded corners..."
                     value={config.prompt}
                     onChange={(e) =>
@@ -339,8 +359,8 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                   />
                 </div>
 
-                {/* Right */}
-                <div className="space-y-2 flex flex-col w-full">
+                {/* Right - Canvas */}
+                <div className="space-y-2 flex flex-col flex-1 min-h-73 min-w-98">
                   <DrawingCanvas
                     onSave={(url) =>
                       setConfig((p) => ({ ...p, sketchUrl: url }))
