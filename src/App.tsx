@@ -18,6 +18,22 @@ function App() {
       root.classList.remove("dark");
     }
   }, [theme]);
+  useEffect(() => {
+    if (isAiOpen) {
+      // lock scroll
+      document.body.style.overflow = "hidden";
+    } else {
+      // unlock scroll
+      document.body.style.overflow = "";
+    }
+
+    // cleanup in case modal unmounts
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isAiOpen]);
+
+  if (!isAiOpen) return null;
   return (
     <>
       {/* floating button */}

@@ -242,22 +242,35 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
       scrollRef.current.scrollTop = 0; // scroll to top
     }
   }, [stepIndex]);
+
   /* ================= RENDER ================= */
 
   return (
-    <div className="w-fit overflow-hidden rounded-3xl ">
+    <div className="w-fit overflow-hidden rounded-3xl">
       {/* Modal Card */}
       <div
         ref={scrollRef}
         className={`relative  max-w-5xl max-h-[90vh] overflow-hidden overflow-y-auto rounded-3xl bg-white dark:bg-neutral-800  ${styles.custom_scrollbar}`}
       >
+        {/* modal close button */}
         <button
           onClick={onClose}
-          aria-label="Close modal"
-          className="absolute top-4 right-4 size-10 flex items-center justify-center rounded-full bg-white dark:bg-neutral-600 shadow-md transition-all active:scale-95 cursor-pointer"
+          className="
+    absolute top-4 right-4
+    h-10 w-10
+    flex items-center justify-center
+    rounded-full
+    bg-white dark:bg-neutral-600
+    shadow-md
+    z-50
+    transition-all
+    active:scale-95
+    cursor-pointer
+  "
         >
-          <X className="size-3.5  text-gray-700 dark:text-white" />
+          <X className="text-gray-700 dark:text-white" />
         </button>
+
         <div className="p-6 sm:p-8 md:p-12">
           {/* STEP HEADER */}
           <div className="text-center space-y-4 mb-3.5 relative">
