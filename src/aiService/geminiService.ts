@@ -1,7 +1,7 @@
 import type {
   Language,
   ProductConfig,
-  AIProvider,
+  // AIProvider,
   DimensionField,
   PatternOption,
 } from "@/aiService/geminiTypes";
@@ -13,9 +13,9 @@ import type {
 
 export const detectProductType = async (
   prompt: string,
-  sketchBase64: string | null,
-  lang: Language,
-  provider: AIProvider,
+  // sketchBase64: string | null,
+  // lang: Language,
+  // provider: AIProvider,
 ): Promise<string> => {
   console.log("[MOCK] detectProductType called with:", prompt);
   return "Wardrobe"; // fake category
@@ -24,7 +24,7 @@ export const detectProductType = async (
 export const getRequiredDimensions = async (
   productType: string,
   lang: Language,
-  provider: AIProvider,
+  // provider: AIProvider,
 ): Promise<DimensionField[]> => {
   console.log("[MOCK] getRequiredDimensions called with:", productType);
   return [
@@ -39,7 +39,7 @@ export const suggestPatterns = async (
   woodType: string,
   notes: string,
   lang: Language,
-  provider: AIProvider,
+  // provider: AIProvider,
 ): Promise<PatternOption[]> => {
   console.log("[MOCK] suggestPatterns called with:", productType, woodType);
   return [
@@ -55,19 +55,18 @@ export const suggestPatterns = async (
 
 export const generateProductImage = async (
   config: ProductConfig,
-  refinement?: string,
+  // refinement?: string,
 ): Promise<string> => {
   console.log("[MOCK] generateProductImage called for:", config.detectedType);
   // Return placeholder image
   return "https://via.placeholder.com/300x300.png?text=Product+Image";
 };
 
-export const placeProductInEnvironment = async (
-  environmentBase64: string,
-  confirmedProductBase64: string,
-  provider: AIProvider,
-  refinement?: string,
-): Promise<string> => {
+export const placeProductInEnvironment = async () // environmentBase64: string,
+// confirmedProductBase64: string,
+// provider: AIProvider,
+// refinement?: string,
+: Promise<string> => {
   console.log("[MOCK] placeProductInEnvironment called");
   // Return placeholder image
   return "https://via.placeholder.com/300x300.png?text=Placed+Image";

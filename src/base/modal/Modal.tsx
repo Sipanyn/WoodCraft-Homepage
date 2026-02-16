@@ -2,14 +2,14 @@ import React from "react";
 import styles from "./modal.module.css";
 import { clx } from "@/utlities/clx";
 type ModalTypes = {
-  isOpen: () => void;
+  isOpen: boolean;
   onClose: () => void;
 } & React.PropsWithChildren;
 const Modal: React.FC<ModalTypes> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
-  const handleOutsideClick = (e) => {
-    if (e.target.classList.contains("modal-overlay")) {
+  const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if ((e.target as HTMLElement).classList.contains("modal-overlay")) {
       onClose();
     }
   };

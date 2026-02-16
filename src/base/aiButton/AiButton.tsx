@@ -1,6 +1,6 @@
 import type React from "react";
 type AiButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
-const AiButton: React.FC<React.FC<AiButtonProps>> = ({ ...props }) => {
+const AiButton = (props: AiButtonProps) => {
   return (
     <button
       {...props}

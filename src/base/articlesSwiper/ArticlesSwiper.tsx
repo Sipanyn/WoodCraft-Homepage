@@ -11,7 +11,7 @@ interface Article {
   link: string;
 }
 type ArticlesSwiperProps = {
-  articles: Article[];
+  articles?: Article[];
 };
 const articles: Article[] = [
   {
