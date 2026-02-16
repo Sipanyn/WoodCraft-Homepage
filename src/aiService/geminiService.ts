@@ -37,7 +37,7 @@ export const getRequiredDimensions = async (
 export const suggestPatterns = async (
   productType: string,
   woodType: string,
-  notes: string,
+  // notes: string,
   lang: Language,
   // provider: AIProvider,
 ): Promise<PatternOption[]> => {
