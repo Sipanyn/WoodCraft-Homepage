@@ -148,9 +148,20 @@ const DrawingCanvas: React.FC<{
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }, [theme]); // important so it updates when theme changes
 
-  const pos = (e: React.MouseEvent) => {
+  const pos = (e: React.MouseEvent | React.TouchEvent) => {
     const r = canvasRef.current!.getBoundingClientRect();
-    return { x: e.clientX - r.left, y: e.clientY - r.top };
+
+    if ("touches" in e) {
+      return {
+        x: e.touches[0].clientX - r.left,
+        y: e.touches[0].clientY - r.top,
+      };
+    }
+
+    return {
+      x: e.clientX - r.left,
+      y: e.clientY - r.top,
+    };
   };
 
   return (
@@ -162,7 +173,7 @@ const DrawingCanvas: React.FC<{
 
       <canvas
         ref={canvasRef}
-        className="rounded-2xl border border-gray-200  bg-white dark:bg-neutral-700 shadow-sm cursor-crosshair"
+        className="rounded-2xl border border-gray-200 bg-white dark:bg-neutral-700 shadow-sm cursor-crosshair touch-none"
         onMouseDown={(e) => {
           const ctx = canvasRef.current!.getContext("2d")!;
           const p = pos(e);
@@ -182,6 +193,26 @@ const DrawingCanvas: React.FC<{
           onSave(canvasRef.current!.toDataURL());
         }}
         onMouseLeave={() => setDrawing(false)}
+        onTouchStart={(e) => {
+          e.preventDefault();
+          const ctx = canvasRef.current!.getContext("2d")!;
+          const p = pos(e);
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          setDrawing(true);
+        }}
+        onTouchMove={(e) => {
+          if (!drawing) return;
+          e.preventDefault();
+          const ctx = canvasRef.current!.getContext("2d")!;
+          const p = pos(e);
+          ctx.lineTo(p.x, p.y);
+          ctx.stroke();
+        }}
+        onTouchEnd={() => {
+          setDrawing(false);
+          onSave(canvasRef.current!.toDataURL());
+        }}
       />
     </div>
   );
@@ -192,7 +223,7 @@ const DrawingCanvas: React.FC<{
 ===================================================== */
 
 const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
-  const [step, setStep] = useState<ProductStep>(ProductStep.AI_PREVIEW);
+  const [step, setStep] = useState<ProductStep>(ProductStep.PROMPT);
   const [loading, setLoading] = useState(false);
 
   const [config, setConfig] = useState<ProductConfig>({
