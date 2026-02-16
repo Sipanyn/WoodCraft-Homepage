@@ -86,36 +86,10 @@ const Footer: React.FC = () => {
             </ul>
 
             <div className="flex gap-3 mt-4">
-              <div
-                className="
-        w-16 h-16
-        flex items-center justify-center
-        rounded-2xl
-       p-2
-        ring-2 ring-white/10
-        hover:ring-wood/50
-        hover:-translate-y-1
-        transition-all duration-300
-        cursor-pointer
-      "
-              >
-                {" "}
+              <div className="w-16 h-16 flex items-center justify-center rounded-2xl p-2 ring-2 ring-white/10  hover:ring-wood/50  hover:-translate-y-1  transition-all duration-300  cursor-pointer">
                 <Unipay className="w-16 h-16 flex items-center justify-center rounded-xl " />
               </div>
-              <div
-                className="
-        w-16 h-16
-        flex items-center justify-center
-        rounded-2xl
-       p-2
-        ring-2 ring-white/10
-        hover:ring-wood/50
-        hover:-translate-y-1
-        transition-all duration-300
-        cursor-pointer
-      "
-              >
-                {" "}
+              <div className="w-16 h-16 flex items-center justify-center rounded-2xl p-2 ring-2 ring-white/10 hover:ring-wood/50  hover:-translate-y-1  transition-all duration-300 cursor-pointer">
                 <Master className="w-16 h-16 flex items-center justify-center rounded-xl " />
               </div>
             </div>
@@ -150,38 +124,35 @@ const Footer: React.FC = () => {
           </a>
 
           {/* NEWSLETTER */}
-          <div
-            className="
-      w-full max-w-md
-      bg-gray-200 dark:bg-gray-300
-      rounded-2xl p-1.5
-      flex items-center
-      focus-within:ring-2 focus-within:ring-wood
-      transition
-    "
-          >
+          <div className="w-full max-w-md bg-gray-200 dark:bg-gray-300 rounded-2xl p-1.5 flex items-center transition focus-within:ring-2 focus-within:ring-wood">
             <input
               type="email"
-              placeholder="Get notified about discounts"
+              placeholder="Enter your Email to get notified about discounts"
               className="
-        flex-1 bg-transparent px-3 py-2
-        text-sm 
-        placeholder:text-gray-400
-        outline-none
-        text-black
-      "
+      flex-1
+      min-w-0
+      bg-transparent
+      px-3 sm:py-2
+      text-sm
+      placeholder:text-gray-400
+      outline-none
+      text-black
+      overflow-hidden
+      whitespace-nowrap
+      text-ellipsis
+    "
             />
 
             <button
               className="
-            cursor-pointer
-        shrink-0 px-4 py-2
-        bg-wood text-black
-        rounded-xl text-sm font-DanaMedium
-        hover:brightness-110 active:scale-95
-        hover:scale-105
-        transition
-      "
+      flex-shrink-0
+      px-4 py-2
+      bg-wood text-black
+      rounded-xl text-sm font-DanaMedium
+      hover:brightness-110 active:scale-95
+      hover:scale-105
+      transition
+    "
             >
               Submit
             </button>
