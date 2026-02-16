@@ -192,7 +192,7 @@ const DrawingCanvas: React.FC<{
 ===================================================== */
 
 const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
-  const [step, setStep] = useState<ProductStep>(ProductStep.PROMPT);
+  const [step, setStep] = useState<ProductStep>(ProductStep.AI_PREVIEW);
   const [loading, setLoading] = useState(false);
 
   const [config, setConfig] = useState<ProductConfig>({
@@ -426,7 +426,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
           )}
           {/* AI_PREVIEW */}
           {step === ProductStep.AI_PREVIEW && (
-            <div className="bg-white dark:bg-neutral-800 rounded-3xl shadow-sm border border-amber-50 min-h-[60vh] flex flex-col p-6 md:p-10">
+            <div className="bg-white dark:bg-neutral-800 rounded-3xl shadow-sm border border-gray-300 min-h-[60vh] flex flex-col p-6 md:p-10">
               {/* Header */}
               <div className="text-center space-y-2 mb-8">
                 <h2 className="text-2xl font-bold text-wood">
@@ -446,7 +446,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                   </div>
 
                   {/* Adjustment Note */}
-                  <div className="space-y-4 pt-4 border-t border-amber-50">
+                  <div className="space-y-4 pt-4 border-t border-gray-300">
                     <div className="text-left">
                       <label className="text-sm font-bold text-black dark:text-white flex items-center gap-2 mb-2 px-1">
                         <LucideSparkle className="text-wood" size={18} />
@@ -455,7 +455,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
 
                       <div className="relative">
                         <textarea
-                          className="w-full p-4 pr-12 border-2 border-gray-400 rounded-2xl focus:border-wood outline-none transition-all text-sm resize-none h-24 dark:placeholder:text-gray-400 dark:text-white"
+                          className="w-full p-4 pr-12 border border-gray-200 rounded-2xl focus:border-wood outline-none transition-all text-sm resize-none h-24 dark:placeholder:text-gray-400 dark:text-white"
                           placeholder="For example: make it slightly darker..."
                           value={config.adjustmentNote || ""}
                           onChange={(e) =>
@@ -488,7 +488,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
 
           {/* ENVIRONMENT STEP */}
           {step === ProductStep.ENVIRONMENT && (
-            <div className="bg-white dark:bg-neutral-800 rounded-3xl shadow-sm border border-amber-50 min-h-[60vh] flex flex-col p-6 md:p-10">
+            <div className="bg-white dark:bg-neutral-800 rounded-3xl shadow-sm border border-gray-300 min-h-[60vh] flex flex-col p-6 md:p-10">
               <div className="text-center space-y-2 mb-8">
                 <h2 className="text-2xl font-bold text-wood">
                   Select the installation environment
@@ -532,7 +532,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
           )}
           {/* env preview */}
           {step === ProductStep.ENV_PREVIEW && (
-            <div className="bg-white dark:bg-neutral-800 rounded-3xl shadow-sm border border-amber-50 min-h-[60vh] flex flex-col p-2 sm:p-6 md:p-10">
+            <div className="bg-white dark:bg-neutral-800 rounded-3xl shadow-sm border border-gray-300 min-h-[60vh] flex flex-col p-2 sm:p-6 md:p-10">
               {/* Header */}
               <div className="text-center space-y-2 mb-8">
                 <h2 className="text-2xl font-bold text-wood">
@@ -562,7 +562,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
 
                   {/* Adjustment Section */}
 
-                  <div className="bg-white dark:bg-neutral-800 p-6 rounded-3xl border border-wood shadow-sm space-y-4">
+                  <div className="bg-white dark:bg-neutral-800 p-6 rounded-3xl border border-gray-300 shadow-sm space-y-4">
                     <label className="text-sm font-bold text-black dark:text-white flex items-center gap-2 mb-2 px-1">
                       <LucideSparkle className="text-wood" size={18} />
                       Needs adjustment?
@@ -580,7 +580,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                               adjustmentNote: e.target.value,
                             }))
                           }
-                          className="flex-1 w-full p-2  sm:p-4 border-2 border-gray-300 rounded-2xl focus:border-wood outline-none text-sm resize-none h-24 transition placeholder:text-gray-400 text-black dark:text-white"
+                          className="flex-1 w-full p-2  sm:p-4 border border-gray-200 rounded-2xl focus:border-wood outline-none text-sm resize-none h-24 transition placeholder:text-gray-400 text-black dark:text-white"
                           placeholder="For example, move the product a little to the right."
                         />
 
@@ -605,7 +605,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
             </div>
           )}
           {step === ProductStep.FINAL_CONFIRM && (
-            <div className="bg-white dark:bg-neutral-800 rounded-3xl shadow-sm border border-amber-50 min-h-[60vh] flex flex-col p-4 sm:p-6 md:p-10">
+            <div className="bg-white dark:bg-neutral-800 rounded-3xl shadow-sm border border-gray-200 min-h-[60vh] flex flex-col p-4 sm:p-6 md:p-10">
               {/* Header */}
               <div className="text-center space-y-2 mb-6 sm:mb-8">
                 <h2 className="text-xl sm:text-2xl font-bold text-wood">
@@ -641,8 +641,8 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                   {/* RIGHT SIDE */}
                   <div className="space-y-6 sm:space-y-8">
                     {/* SUMMARY */}
-                    <div className="bg-amber-50/40 dark:bg-neutral-800 p-5 sm:p-6 md:p-8 rounded-3xl border-2 border-wood space-y-5 shadow-sm">
-                      <h3 className="text-base sm:text-lg font-bold text-wood border-b border-gray-300 pb-3">
+                    <div className="bg-white dark:bg-neutral-800 p-5 sm:p-6 md:p-8 rounded-3xl border-2 border-gray-300 space-y-5 shadow-sm">
+                      <h3 className="text-base sm:text-lg font-bold text-black dark:text-white border-b border-gray-300 pb-3">
                         Order Summary:
                       </h3>
 
@@ -655,7 +655,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
 
                       <div className="flex justify-between gap-4 text-gray-400 text-sm sm:text-base">
                         <span>Wood Type:</span>
-                        <span className="font-bold text-stone-900 dark:text-white text-right break-words">
+                        <span className="font-bold text-stone-900 dark:text-white text-right wrap-break-word">
                           {/* {config.woodType?.name?.[lang] ?? "-"} */}
                           {"-"}
                         </span>
@@ -688,9 +688,9 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                     </div>
 
                     {/* QUANTITY */}
-                    <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-2 bg-white p-2  rounded-3xl border-2 border-wood dark:bg-neutral-800 shadow-sm">
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-2 bg-white p-2  rounded-3xl border border-gray-200 dark:bg-neutral-800 shadow-sm">
                       {/* Label */}
-                      <span className="font-bold text-xs sm:text-sm md:text-base text-wood text-center md:text-left mb-1 md:mb-0">
+                      <span className="font-bold text-xs sm:text-sm md:text-base text-black dark:text-white text-center md:text-left mb-1 md:mb-0">
                         Quantity:
                       </span>
 
@@ -704,13 +704,13 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                               quantity: Math.max(1, (prev.quantity ?? 1) - 1),
                             }))
                           }
-                          className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 border-2 border-black dark:border-gray-500 rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl hover:bg-stone-50 dark:hover:bg-neutral-700 transition-all active:scale-95 cursor-pointer dark:text-white"
+                          className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 border border-gray-200  rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl hover:bg-stone-50 dark:hover:bg-neutral-700 transition-all active:scale-95 cursor-pointer dark:text-white"
                         >
                           −
                         </button>
 
                         {/* Quantity */}
-                        <span className="font-bold text-sm sm:text-base md:text-lg lg:text-xl text-stone-900 dark:text-white min-w-[24px] sm:min-w-[28px] md:min-w-[32px] lg:min-w-[36px] text-center">
+                        <span className="font-bold text-sm sm:text-base md:text-lg lg:text-xl text-stone-900 dark:text-white min-w-6 sm:min-w-7 md:min-w-8 lg:min-w-9 text-center">
                           {config.quantity ?? 1}
                         </span>
 
@@ -722,7 +722,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                               quantity: (prev.quantity ?? 1) + 1,
                             }))
                           }
-                          className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 border-2 border-black dark:border-gray-500 rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl hover:bg-stone-50 dark:hover:bg-neutral-700 transition-all active:scale-95 cursor-pointer dark:text-white"
+                          className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 border border-gray-200  rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl hover:bg-stone-50 dark:hover:bg-neutral-700 transition-all active:scale-95 cursor-pointer dark:text-white"
                         >
                           +
                         </button>

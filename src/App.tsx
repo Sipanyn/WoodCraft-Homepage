@@ -8,7 +8,7 @@ import Modal from "./base/modal/Modal";
 
 function App() {
   const theme = useThemeStore((state) => state.theme);
-  const [isAiOpen, setIsOpenAi] = useState(true);
+  const [isAiOpen, setIsOpenAi] = useState(false);
   useEffect(() => {
     const root = document.documentElement;
 
