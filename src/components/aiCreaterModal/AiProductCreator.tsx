@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   Loader2,
-  PenTool,
-  Eraser,
-  Camera,
+  // PenTool,
+  // Eraser,
+  // Camera,
   CheckCircle,
   LucideSparkle,
   LucideRefreshCw,
@@ -64,6 +64,9 @@ export type ProductConfig = {
   environmentImageUrl: string | null;
   finalRenderUrl: string | null;
   aiProvider: AIProvider;
+  adjustmentNote: string;
+  previewImageUrl: string;
+  quantity: number;
 };
 type AiProductCreatorProps = {
   onClose: () => void;
@@ -205,6 +208,9 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
     environmentImageUrl: null,
     finalRenderUrl: null,
     aiProvider: "gemini-flash",
+    adjustmentNote: "",
+    previewImageUrl: "",
+    quantity: 0,
   });
 
   const next = () => {
@@ -318,6 +324,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                     }`}
                   >
                     <img
+                      alt="image"
                       src={w.image}
                       className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -636,7 +643,8 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                       <div className="flex justify-between gap-4 text-gray-400 text-sm sm:text-base">
                         <span>Wood Type:</span>
                         <span className="font-bold text-stone-900 dark:text-white text-right break-words">
-                          {config.woodType?.name?.[lang] ?? "-"}
+                          {/* {config.woodType?.name?.[lang] ?? "-"} */}
+                          {"-"}
                         </span>
                       </div>
 
