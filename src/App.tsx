@@ -33,7 +33,6 @@ function App() {
     };
   }, [isAiOpen]);
 
-  if (!isAiOpen) return null;
   return (
     <>
       {/* floating button */}
