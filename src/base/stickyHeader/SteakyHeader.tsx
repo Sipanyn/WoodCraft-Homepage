@@ -58,7 +58,7 @@ const StickyHeader = () => {
       {/* Backdrop */}
       {menuOpen && (
         <div
-          className="absolute inset-0 bg-black/50 z-60"
+          className="fixed inset-0 bg-black/50 z-60 h-full"
           onClick={() => {
             setMenuOpen(false);
             setCatOpen(false);
