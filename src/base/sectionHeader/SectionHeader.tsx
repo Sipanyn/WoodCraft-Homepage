@@ -36,7 +36,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
             {iconId}
           </span>
 
-          <div className="space-y-1">
+          <div className="space-y-1 flex flex-col items-center sm:items-start">
             <p className="text-xl md:text-2xl font-MorabbaMedium text-gray-800 dark:text-gray-50">
               {highlight && <span className="text-wood mr-1">{highlight}</span>}
               {title}
