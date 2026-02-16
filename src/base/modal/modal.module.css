@@ -3,13 +3,10 @@
   border: 8px;
   min-width: 300px;
   width: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 @media (max-width: 640px) {
   .modalStyle {
-    padding: 60px 20px 60px 20px;
+    padding: 50px 20px;
   }
 }
 .overlayStyle {

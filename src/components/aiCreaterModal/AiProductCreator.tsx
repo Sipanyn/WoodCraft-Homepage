@@ -246,7 +246,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
   /* ================= RENDER ================= */
 
   return (
-    <div className="w-fit overflow-hidden rounded-3xl">
+    <div className="w-fit overflow-hidden rounded-3xl ">
       {/* Modal Card */}
       <div
         ref={scrollRef}
