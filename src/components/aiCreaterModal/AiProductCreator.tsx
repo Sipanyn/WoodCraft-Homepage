@@ -296,7 +296,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
   /* ================= RENDER ================= */
 
   return (
-    <div className="w-fit overflow-hidden rounded-3xl ">
+    <div className="w-full  overflow-y-hidden rounded-3xl m-auto">
       {/* Modal Card */}
       <div
         ref={scrollRef}
@@ -343,9 +343,9 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
               </div>
 
               {/* left + right */}
-              <div className="flex flex-col sm:justify-items-normal sm:flex-row gap-6 items-stretch w-full h-full">
+              <div className="flex flex-col sm:justify-items-normal sm:flex-row sm:flex-wrap gap-6 items-stretch w-full h-full">
                 {/* Left - Textarea */}
-                <div className="space-y-2 flex flex-col flex-1 pb-10 min-h-73 min-w-98">
+                <div className="space-y-2 flex flex-col flex-1 pb-10 min-h-73 sm:min-w-98">
                   <p className="text-sm font-bold text-black dark:text-white">
                     Text description:
                   </p>
@@ -360,7 +360,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                 </div>
 
                 {/* Right - Canvas */}
-                <div className="space-y-2 flex flex-col flex-1 min-h-73 min-w-98">
+                <div className="space-y-2 flex flex-col flex-1 items-stretch min-h-73 sm:min-w-98">
                   <DrawingCanvas
                     onSave={(url) =>
                       setConfig((p) => ({ ...p, sketchUrl: url }))
