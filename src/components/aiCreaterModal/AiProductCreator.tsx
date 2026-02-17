@@ -477,7 +477,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
           )}
           {/* AI_PREVIEW */}
           {step === ProductStep.AI_PREVIEW && (
-            <div className="bg-white dark:bg-neutral-800 rounded-3xl shadow-sm border border-gray-300 min-h-[60vh] flex flex-col p-6 md:p-10">
+            <div className="bg-white dark:bg-neutral-800 rounded-3xl shadow-sm border border-gray-300 h-fit flex flex-col p-6 md:p-10">
               {/* Header */}
               <div className="text-center space-y-2 mb-8">
                 <h2 className="text-2xl font-bold text-wood">
