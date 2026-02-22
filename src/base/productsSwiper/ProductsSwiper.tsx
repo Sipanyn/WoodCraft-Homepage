@@ -80,19 +80,21 @@ const ProductsSwiper = forwardRef<ProductsSwiperRef, ProductsSwiperProps>(
                 </div>
 
                 <div className={styles.product_card_rating}>
-                  {Array.from({ length: product?.totalStars }).map((_, i) => {
-                    const starNumber = i + 1;
+                  {Array.from({ length: product?.totalStars ?? 0 }).map(
+                    (_, i) => {
+                      const starNumber = i + 1;
 
-                    let iconClass = "bi-star"; // default empty
+                      let iconClass = "bi-star"; // default empty
 
-                    if (Number(product?.rating) >= starNumber) {
-                      iconClass = "bi-star-fill"; // full star
-                    } else if (Number(product?.rating) >= starNumber - 0.5) {
-                      iconClass = "bi-star-half"; // half star
-                    }
+                      if (Number(product?.rating) >= starNumber) {
+                        iconClass = "bi-star-fill"; // full star
+                      } else if (Number(product?.rating) >= starNumber - 0.5) {
+                        iconClass = "bi-star-half"; // half star
+                      }
 
-                    return <i key={i} className={`bi ${iconClass}`} />;
-                  })}
+                      return <i key={i} className={`bi ${iconClass}`} />;
+                    },
+                  )}
 
                   <span>
                     {isFa

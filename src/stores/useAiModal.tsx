@@ -1,6 +1,9 @@
 import { create } from "zustand";
-
-export const useAiModal = create((set) => ({
+interface AiModalState {
+  isAiOpen: boolean;
+  setIsAiOpen: (open: boolean) => void;
+}
+export const useAiModal = create<AiModalState>((set) => ({
   isAiOpen: false,
 
   setIsAiOpen: (value) => set({ isAiOpen: value }),

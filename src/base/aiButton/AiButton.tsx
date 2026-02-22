@@ -1,10 +1,8 @@
-import i18n from "@/utlities/i18n";
 import type React from "react";
 import { useTranslation } from "react-i18next";
 type AiButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 const AiButton = (props: AiButtonProps) => {
   const { t } = useTranslation("sticky");
-  const isFa = i18n.language === "fa";
   return (
     <button
       {...props}
