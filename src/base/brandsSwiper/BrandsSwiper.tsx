@@ -70,6 +70,7 @@ const BrandsSwiper = forwardRef<any, BrandsSwiperProps>(
     return (
       <div className={`mt-5 w-full`}>
         <Swiper
+          dir="ltr"
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
             updateNavState(swiper);
