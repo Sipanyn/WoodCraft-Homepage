@@ -1,78 +1,84 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./articlesSwiper.module.css";
 import { clx } from "@/utlities/clx";
+import { useTranslation } from "react-i18next";
+import i18n from "@/utlities/i18n";
 
 interface Article {
   id: string | number;
   image: string;
   title: string;
   date: string;
-  views: number;
+  views: string;
   link: string;
 }
 type ArticlesSwiperProps = {
   articles?: Article[];
 };
-const articles: Article[] = [
-  {
-    id: 1,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXDg9CI-or9AYalL1KYkMDzoEowucCrYXMrQ&s",
-    title: "Woodwork Article – 2011 Issue – Sculptural Woodwork ",
-    date: "1403/5/1",
-    views: 120,
-    link: "/article-details",
-  },
-  {
-    id: 2,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZLrv3Y_KQosisCamrGy7es8MsCNwZlZXXA&s",
-    title: "Woodwork Article – 2011 Issue – Sculptural Woodwork ",
-    date: "1403/5/1",
-    views: 98,
-    link: "/article-details",
-  },
-  {
-    id: 3,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXDg9CI-or9AYalL1KYkMDzoEowucCrYXMrQ&s",
-    title: "Woodwork Article – 2011 Issue – Sculptural Woodwork ",
-    date: "1403/5/1",
-    views: 120,
-    link: "/article-details",
-  },
-  {
-    id: 4,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZLrv3Y_KQosisCamrGy7es8MsCNwZlZXXA&s",
-    title: "Woodwork Article – 2011 Issue – Sculptural Woodwork ",
-    date: "1403/5/1",
-    views: 98,
-    link: "/article-details",
-  },
-  {
-    id: 5,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXDg9CI-or9AYalL1KYkMDzoEowucCrYXMrQ&s",
-    title: "Woodwork Article – 2011 Issue – Sculptural Woodwork ",
-    date: "1403/5/1",
-    views: 120,
-    link: "/article-details",
-  },
-  {
-    id: 6,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZLrv3Y_KQosisCamrGy7es8MsCNwZlZXXA&s",
-    title: "Woodwork Article – 2011 Issue – Sculptural Woodwork ",
-    date: "1403/5/1",
-    views: 98,
-    link: "/article-details",
-  },
-];
+
 const ArticlesSwiper: React.FC<ArticlesSwiperProps> = () => {
+  const { t } = useTranslation("articlesSwiper");
+  const isFa = i18n.language === "fa";
+  const articles: Article[] = [
+    {
+      id: 1,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXDg9CI-or9AYalL1KYkMDzoEowucCrYXMrQ&s",
+      title: t("title"),
+      date: t("date"),
+      views: t("views"),
+      link: "/article-details",
+    },
+    {
+      id: 2,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZLrv3Y_KQosisCamrGy7es8MsCNwZlZXXA&s",
+      title: t("title"),
+      date: t("date"),
+      views: t("views"),
+      link: "/article-details",
+    },
+    {
+      id: 3,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXDg9CI-or9AYalL1KYkMDzoEowucCrYXMrQ&s",
+      title: t("title"),
+      date: t("date"),
+      views: t("views"),
+      link: "/article-details",
+    },
+    {
+      id: 4,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZLrv3Y_KQosisCamrGy7es8MsCNwZlZXXA&s",
+      title: t("title"),
+      date: t("date"),
+      views: t("views"),
+      link: "/article-details",
+    },
+    {
+      id: 5,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXDg9CI-or9AYalL1KYkMDzoEowucCrYXMrQ&s",
+      title: t("title"),
+      date: t("date"),
+      views: t("views"),
+      link: "/article-details",
+    },
+    {
+      id: 6,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZLrv3Y_KQosisCamrGy7es8MsCNwZlZXXA&s",
+      title: t("title"),
+      date: t("date"),
+      views: t("views"),
+      link: "/article-details",
+    },
+  ];
   return (
     <div className="w-full mt-5 mb-5">
       <Swiper
+        dir="ltr"
         className="articleSlider"
         spaceBetween={20}
         slidesPerView={4}
@@ -99,10 +105,12 @@ const ArticlesSwiper: React.FC<ArticlesSwiperProps> = () => {
               <div className="absolute inset-0 bg-black/60 opacity-0 flex items-center justify-center group-hover:opacity-100 transition-all duration-300 rounded-bl-3xl rounded-tr-3xl">
                 <a
                   href={article.link}
-                  className="flex items-center px-2 py-1 gap-x-1 font-DanaMedium rounded-lg border-2 border-white text-white"
+                  className={`flex items-end  ${isFa ? "flex-row-reverse" : "flex-row"} px-2 py-1  rounded-lg border-2 border-white text-white`}
                 >
-                  <p>continue reading</p>
-                  <i className="bi bi-chevron-right scale-70 flex justify-center items-center"></i>
+                  <p>{t("continueReading")}</p>
+                  <i
+                    className={`bi bi-chevron-${isFa ? "left" : "right"} scale-70 flex justify-center items-center`}
+                  ></i>
                 </a>
               </div>
             </div>
@@ -116,7 +124,9 @@ const ArticlesSwiper: React.FC<ArticlesSwiperProps> = () => {
 
             {/* Meta */}
             <div className="flex items-center justify-between text-sm px-1">
-              <span className="flex items-center gap-x-1 text-wood-dark dark:text-wood-light">
+              <span
+                className={`flex flex-row items-center gap-x-1 text-wood-dark dark:text-wood-light`}
+              >
                 <i className="bi bi-calendar4-week"></i>
                 <p className="mt-1">{article.date}</p>
               </span>

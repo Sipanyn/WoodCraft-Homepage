@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import styles from "./sectionHeader.module.css";
+import { useTranslation } from "react-i18next";
 
 type SectionHeaderProps = {
   title: string;
@@ -26,6 +27,10 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   children,
   swiperState,
 }) => {
+  const { t } = useTranslation("articlesSectionHeader");
+  const { i18n } = useTranslation();
+
+  const isFa = i18n.language === "fa";
   return (
     <section className="mx-4 lg:container mt-10 lg:mt-20">
       {/* SECTION TITLE */}
@@ -65,7 +70,9 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
                   aria-label="Previous"
                   disabled={swiperState?.isBeginning}
                 >
-                  <i className="bi bi-chevron-left" />
+                  <i
+                    className={`${isFa ? "bi bi-chevron-right" : " bi bi-chevron-left"}`}
+                  />
                 </button>
               )}
 
@@ -76,7 +83,9 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
                   aria-label="Next"
                   disabled={swiperState?.isEnd}
                 >
-                  <i className="bi bi-chevron-right" />
+                  <i
+                    className={`${isFa ? "bi bi-chevron-left" : " bi bi-chevron-right"}`}
+                  />
                 </button>
               )}
             </div>
@@ -87,9 +96,17 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
               href={viewAllHref}
               className="group shadow-xl text-sm md:text-base flex gap-x-1.5 items-center px-2 h-10 md:px-3 text-white bg-wood dark:bg-neutral-700 rounded-xl"
             >
-              <p>View all</p>
-              <span className="w-7 h-7 rounded-full bg-wood-light dark:bg-neutral-400 flex-center md:group-hover:translate-x-1 transition-transform duration-300 flex justify-center items-center">
-                <i className="bi bi-arrow-right" />
+              <p>{t("viewAll")}</p>
+              <span
+                className={`w-7 h-7 rounded-full bg-wood-light dark:bg-neutral-400 flex-center transition-transform duration-300 flex justify-center items-center ${
+                  isFa
+                    ? "md:group-hover:-translate-x-1"
+                    : "md:group-hover:translate-x-1"
+                }`}
+              >
+                <i
+                  className={`bi ${isFa ? "bi-arrow-left" : "bi-arrow-right"}`}
+                />
               </span>
             </a>
           )}

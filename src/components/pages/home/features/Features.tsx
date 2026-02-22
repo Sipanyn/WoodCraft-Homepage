@@ -1,34 +1,34 @@
 import type { ReactNode } from "react";
-
+import { useTranslation } from "react-i18next";
 interface FeatureItem {
   icon: ReactNode;
   title: string;
 }
 
-const features: FeatureItem[] = [
-  {
-    icon: <i className="bi bi-award text-2xl"></i>,
-    title: "Guarantee of originality",
-  },
-  {
-    icon: <i className="bi bi-truck text-2xl"></i>,
-    title: "Express delivery",
-  },
-  {
-    icon: <i className="bi bi-headset text-2xl"></i>,
-    title: "24/7 Support",
-  },
-  {
-    icon: <i className="bi bi-credit-card text-2xl"></i>,
-    title: "Pay on delivery",
-  },
-  {
-    icon: <i className="bi bi-box-seam text-2xl"></i>,
-    title: "7 days return",
-  },
-];
-
 const Features: React.FC = () => {
+  const { t } = useTranslation("features");
+  const features: FeatureItem[] = [
+    {
+      icon: <i className="bi bi-award text-2xl"></i>,
+      title: t("GuaranteeOfOriginality"),
+    },
+    {
+      icon: <i className="bi bi-truck text-2xl"></i>,
+      title: t("ExpressDelivery"),
+    },
+    {
+      icon: <i className="bi bi-headset text-2xl"></i>,
+      title: t("24/7Support"),
+    },
+    {
+      icon: <i className="bi bi-credit-card text-2xl"></i>,
+      title: t("PayOnDelivery"),
+    },
+    {
+      icon: <i className="bi bi-box-seam text-2xl"></i>,
+      title: t("7DaysReturn"),
+    },
+  ];
   return (
     <div className="w-full mt-10 mb-10 lg:mt-20 flex flex-row flex-wrap gap-3 justify-center items-stretch">
       {features.map((feature, index) => (

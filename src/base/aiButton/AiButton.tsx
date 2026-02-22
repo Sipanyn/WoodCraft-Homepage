@@ -1,11 +1,15 @@
+import i18n from "@/utlities/i18n";
 import type React from "react";
+import { useTranslation } from "react-i18next";
 type AiButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 const AiButton = (props: AiButtonProps) => {
+  const { t } = useTranslation("sticky");
+  const isFa = i18n.language === "fa";
   return (
     <button
       {...props}
       className="
-        fixed right-5 bottom-3 z-50
+
         animate-bounce
     flex items-center gap-2
     bg-stone-200/50 dark:bg-neutral-700/50
@@ -20,8 +24,8 @@ const AiButton = (props: AiButtonProps) => {
     focus:outline-none focus:ring-2 focus:ring-wood/60
     cursor-pointer"
     >
-      <p className="hidden sm:block">Start creating by</p>
       <i className="bi bi-robot text-2xl flex justify-center items-center"></i>
+      <p className="hidden sm:block">{t("orderNow")}</p>
     </button>
   );
 };

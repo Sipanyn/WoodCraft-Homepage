@@ -1,6 +1,5 @@
 @import "tailwindcss";
 :root {
-  --font-sans: "MyFont";
   --canvas-bg: #ffffff;
 }
 @custom-variant dark (&:where(.dark, .dark *));
@@ -12,7 +11,12 @@
 } */
 @font-face {
   font-family: "MyFont";
-  src: url("/public/fonts/SNPro-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/SNPro-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+
+  font-family: "VazirFont";
+  src: url("/fonts/SNPro-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }
