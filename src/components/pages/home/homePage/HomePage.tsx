@@ -33,8 +33,11 @@ function HomePage() {
     src: string;
     price: string;
     oldPrice: string;
+    off?: string; // optional, e.g., "20% off"
+    rating?: string; // optional, e.g., "4.5"
+    totalStars?: number; // optional, number of stars
   }
-  const products = [
+  const products: Product[] = [
     {
       id: 1,
       title: t("title"),
