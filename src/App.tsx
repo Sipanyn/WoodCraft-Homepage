@@ -19,45 +19,29 @@ function App() {
 
   useEffect(() => {
     const html = document.documentElement;
-    const lang = localStorage.getItem("app-language") || "en";
 
-    if (lang === "fa") {
-      document.documentElement.setAttribute("dir", "rtl");
-      document.documentElement.setAttribute("lang", "fa");
-    } else {
-      document.documentElement.setAttribute("dir", "ltr");
-      document.documentElement.setAttribute("lang", "en");
-    }
-
-    const theme = localStorage.getItem("theme-storage") || "light";
-
-    if (theme === "light") {
-      html.classList.remove("dark");
-    } else {
-      html.classList.add("dark");
-    }
-
-    // --- Language & Direction ---
     const isFarsi = i18n.language === "fa";
+
+    // Direction + lang
     html.setAttribute("dir", isFarsi ? "rtl" : "ltr");
     html.setAttribute("lang", isFarsi ? "fa" : "en");
 
-    // Update font class safely without overwriting others
+    // Fonts
+    html.classList.remove("VazirFont", "MyFont");
     html.classList.add(isFarsi ? "VazirFont" : "MyFont");
 
-    // --- Theme ---
+    // Theme
     if (theme === "dark") {
       html.classList.add("dark");
     } else {
       html.classList.remove("dark");
     }
 
-    // --- Language change ---
+    // Change language if needed
     if (i18n.language !== language) {
       i18n.changeLanguage(language);
     }
-  }, [language, theme, i18n]);
-
+  }, [language, theme, i18n.language]);
   return (
     <>
       {/* floating button */}
