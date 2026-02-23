@@ -24,9 +24,13 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
       className={`fixed top-0 ${isFa ? "left-0" : "right-0"} h-full w-72 
   text-white bg-stone-100 dark:bg-neutral-900 z-70 
   transform transition-transform duration-300 ease-in-out 
-  overflow-scroll pb-10
+  overflow-scroll pb-10 opacity-0
   ${
-    menuOpen ? "translate-x-0" : isFa ? "-translate-x-full" : "translate-x-full"
+    menuOpen
+      ? "translate-x-0 opacity-100"
+      : isFa
+        ? "-translate-x-full"
+        : "translate-x-full"
   } ${styles.custom_scrollBar}`}
     >
       {/* Menu Header */}
