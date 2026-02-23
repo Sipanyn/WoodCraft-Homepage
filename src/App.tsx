@@ -11,7 +11,7 @@ import SupprortButton from "./base/supprortButton/supprortButton";
 function App() {
   const { isAiOpen, setIsAiOpen } = useAiModal();
   const language = useLanguageStore((s) => s.language);
-
+  const theme = useThemeStore((s) => s.theme);
   useEffect(() => {
     const html = document.documentElement;
     const isFarsi = language === "fa";
@@ -22,10 +22,6 @@ function App() {
     html.classList.remove("VazirFont", "MyFont");
     html.classList.add(isFarsi ? "VazirFont" : "MyFont");
   }, [language]);
-
-  const theme = useThemeStore((s) => s.theme);
-  // const setTheme = useThemeStore((s) => s.setTheme);
-  // const toggleTheme = useThemeStore((s) => s.toggleTheme);
 
   useEffect(() => {
     const html = document.documentElement;

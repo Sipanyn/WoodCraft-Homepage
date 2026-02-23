@@ -42,7 +42,7 @@ const StickyHeader = () => {
       <header className="sticky top-0 z-50 bg-gray-50 dark:bg-neutral-800 border-b border-gray-200 dark:border-zinc-700 transition-all duration-500 mb-3.5">
         <div className="sm:container flex flex-row-reverse sm:flex-row justify-between items-center pt-3 pb-4 px-4 m-auto ">
           {/* Hamburger */}
-          <div className="sm:hidden">
+          <div className="sm:hidden flex flex-1 justify-end">
             <button
               onClick={() => setMenuOpen(true)}
               className="text-2xl text-gray-600 dark:text-gray-200 cursor-pointer"
@@ -52,11 +52,11 @@ const StickyHeader = () => {
           </div>
 
           {/* Logo */}
-          <div className="flex justify-start cursor-pointer">
+          <div className="flex flex-1 justify-center cursor-pointer">
             <Logo />
           </div>
           {/* Actions */}
-          <div className="flex flex-row gap-2.5">
+          <div className="flex flex-row flex-1 justify-start gap-2.5">
             {/* Ai creator */}
             <AiButton onClick={() => setIsAiOpen(true)} />
             {/* basket */}
