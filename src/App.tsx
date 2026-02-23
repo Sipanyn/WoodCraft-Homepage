@@ -19,6 +19,23 @@ function App() {
 
   useEffect(() => {
     const html = document.documentElement;
+    const lang = localStorage.getItem("app-language") || "en";
+
+    if (lang === "fa") {
+      document.documentElement.setAttribute("dir", "rtl");
+      document.documentElement.setAttribute("lang", "fa");
+    } else {
+      document.documentElement.setAttribute("dir", "ltr");
+      document.documentElement.setAttribute("lang", "en");
+    }
+
+    const theme = localStorage.getItem("theme-storage") || "light";
+
+    if (theme === "light") {
+      html.classList.remove("dark");
+    } else {
+      html.classList.add("dark");
+    }
 
     // --- Language & Direction ---
     const isFarsi = i18n.language === "fa";
