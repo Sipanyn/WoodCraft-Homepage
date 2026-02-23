@@ -4,7 +4,6 @@ import HomePage from "./components/pages/home/homePage/HomePage";
 import { useThemeStore } from "./stores/useThemeStore ";
 import AiProductCreator from "./components/aiCreaterModal/AiProductCreator";
 import Modal from "./base/modal/Modal";
-import i18n from "./utlities/i18n";
 import { useLanguageStore } from "./stores/useLanguageStore";
 import { useAiModal } from "./stores/useAiModal";
 import SupprortButton from "./base/supprortButton/supprortButton";
