@@ -23,6 +23,14 @@ export const useThemeStore = create<ThemeState>()(
     }),
     {
       name: "theme-storage",
+
+      // ✅ on hydration, apply theme immediately to DOM
+      onRehydrateStorage: () => (state) => {
+        if (state?.theme) {
+          const html = document.documentElement;
+          html.classList.toggle("dark", state.theme === "dark");
+        }
+      },
     },
   ),
 );

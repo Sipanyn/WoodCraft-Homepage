@@ -12,12 +12,12 @@ export const useLanguageStore = create<LanguageState>()(
       language: "en",
 
       setLanguage: (lang: "en" | "fa") => {
-        i18n.changeLanguage(lang); // sync with i18next
+        i18n.changeLanguage(lang);
         set({ language: lang });
       },
 
       toggleLanguage: () =>
-        set((state: LanguageState) => {
+        set((state) => {
           const newLang = state.language === "en" ? "fa" : "en";
           i18n.changeLanguage(newLang);
           return { language: newLang };
@@ -25,6 +25,11 @@ export const useLanguageStore = create<LanguageState>()(
     }),
     {
       name: "app-language",
+      onRehydrateStorage: () => (state) => {
+        if (state?.language) {
+          i18n.changeLanguage(state.language);
+        }
+      },
     },
   ),
 );

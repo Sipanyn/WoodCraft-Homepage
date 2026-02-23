@@ -10,38 +10,28 @@ import { useAiModal } from "./stores/useAiModal";
 import SupprortButton from "./base/supprortButton/supprortButton";
 
 function App() {
-  // zustnad store states
-  const language = useLanguageStore((state) => state.language);
-  const theme = useThemeStore((state) => state.theme);
   const { isAiOpen, setIsAiOpen } = useAiModal();
-  // AI modal state
-  // const [isAiOpen, setIsOpenAi] = useState(false);
+  const language = useLanguageStore((s) => s.language);
 
   useEffect(() => {
     const html = document.documentElement;
+    const isFarsi = language === "fa";
 
-    const isFarsi = i18n.language === "fa";
+    html.dir = isFarsi ? "rtl" : "ltr";
+    html.lang = language;
 
-    // Direction + lang
-    html.setAttribute("dir", isFarsi ? "rtl" : "ltr");
-    html.setAttribute("lang", isFarsi ? "fa" : "en");
-
-    // Fonts
     html.classList.remove("VazirFont", "MyFont");
     html.classList.add(isFarsi ? "VazirFont" : "MyFont");
+  }, [language]);
 
-    // Theme
-    if (theme === "dark") {
-      html.classList.add("dark");
-    } else {
-      html.classList.remove("dark");
-    }
+  const theme = useThemeStore((s) => s.theme);
+  // const setTheme = useThemeStore((s) => s.setTheme);
+  // const toggleTheme = useThemeStore((s) => s.toggleTheme);
 
-    // Change language if needed
-    if (i18n.language !== language) {
-      i18n.changeLanguage(language);
-    }
-  }, [language, theme, i18n.language]);
+  useEffect(() => {
+    const html = document.documentElement;
+    html.classList.toggle("dark", theme === "dark");
+  }, [theme]);
   return (
     <>
       {/* floating button */}
