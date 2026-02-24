@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import { create } from "zustand";
 
 export interface CartItem {
@@ -23,7 +22,7 @@ interface CartState {
   closeCart: () => void;
 }
 
-export const useCartStore = create<CartState>((set, get) => ({
+export const useCartStore = create<CartState>((set) => ({
   cartItems: [
     {
       id: 1,
