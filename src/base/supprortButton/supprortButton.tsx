@@ -44,7 +44,7 @@ export default function SupportButton() {
               <a
                 key={index}
                 href={item.href}
-                className={`absolute flex items-center justify-center w-12 h-12 bg-gray-200/50 backdrop-blur-lg text-black dark:text-white dark:bg-neutral-600 rounded-full dark:shadow-stone-50/10 shadow-lg transition-all duration-300 hover:-translate-y-1`}
+                className={`absolute flex items-center justify-center w-12 h-12 bg-gray-200  text-black dark:text-white dark:bg-neutral-600 rounded-full dark:shadow-stone-50/10 shadow-lg transition-all duration-300 hover:-translate-y-1`}
                 style={{
                   transform: `translate(${-x}px, ${-y}px)`,
                 }}

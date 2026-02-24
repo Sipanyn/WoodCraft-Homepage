@@ -46,6 +46,9 @@ import fasticky from "./locales/fa/sticky.json";
 import enhamburgerMenu from "./locales/en/hamburgerMenu.json";
 import fahamburgerMenu from "./locales/fa/hamburgerMenu.json";
 
+import encart from "./locales/en/cart.json";
+import facart from "./locales/fa/cart.json";
+
 i18n.use(initReactI18next).init({
   resources: {
     en: {
@@ -64,6 +67,7 @@ i18n.use(initReactI18next).init({
       navBar: ennavBar,
       sticky: ensticky,
       hamburgerMenu: enhamburgerMenu,
+      cart: encart,
     },
     fa: {
       footer: frfooter,
@@ -81,6 +85,7 @@ i18n.use(initReactI18next).init({
       navBar: fanavBar,
       sticky: fasticky,
       hamburgerMenu: fahamburgerMenu,
+      cart: facart,
     },
   },
 

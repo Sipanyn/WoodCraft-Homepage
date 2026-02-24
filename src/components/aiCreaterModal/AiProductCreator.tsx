@@ -739,14 +739,14 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                     </div>
 
                     {/* QUANTITY */}
-                    <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-2 bg-white p-2  rounded-3xl border border-gray-200 dark:bg-neutral-800 shadow-sm">
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-2 bg-white p-2 dark:bg-neutral-800 ">
                       {/* Label */}
                       <span className="font-bold text-xs sm:text-sm md:text-base text-black dark:text-white text-center md:text-left mb-1 md:mb-0">
                         Quantity:
                       </span>
 
                       {/* Buttons & Quantity */}
-                      <div className="flex flex-wrap justify-center md:flex-nowrap items-center gap-1  w-full md:w-auto">
+                      <div className="flex flex-wrap justify-center md:flex-nowrap items-center gap-1 w-full md:w-auto">
                         {/* Decrease */}
                         <button
                           onClick={() =>
@@ -755,13 +755,13 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                               quantity: Math.max(1, (prev.quantity ?? 1) - 1),
                             }))
                           }
-                          className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 border border-gray-200  rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl hover:bg-stone-50 dark:hover:bg-neutral-700 transition-all active:scale-95 cursor-pointer dark:text-white"
+                          className="px-2 text-red-500 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-all active:scale-95 rounded-md border border-gray-200 dark:border-gray-600 text-sm sm:text-base md:text-lg lg:text-xl"
                         >
                           −
                         </button>
 
                         {/* Quantity */}
-                        <span className="font-bold text-sm sm:text-base md:text-lg lg:text-xl text-stone-900 dark:text-white min-w-6 sm:min-w-7 md:min-w-8 lg:min-w-9 text-center">
+                        <span className="px-2 text-sm sm:text-base md:text-lg lg:text-xl text-stone-900 dark:text-white min-w-6 sm:min-w-7 md:min-w-8 lg:min-w-9 text-center">
                           {config.quantity ?? 1}
                         </span>
 
@@ -773,7 +773,7 @@ const AiProductCreator: React.FC<AiProductCreatorProps> = ({ onClose }) => {
                               quantity: (prev.quantity ?? 1) + 1,
                             }))
                           }
-                          className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 border border-gray-200  rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl hover:bg-stone-50 dark:hover:bg-neutral-700 transition-all active:scale-95 cursor-pointer dark:text-white"
+                          className="px-2 text-green-500 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-all active:scale-95 rounded-md border border-gray-200 dark:border-gray-600 text-sm sm:text-base md:text-lg lg:text-xl"
                         >
                           +
                         </button>
