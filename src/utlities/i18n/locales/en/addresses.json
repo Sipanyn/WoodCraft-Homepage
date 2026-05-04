@@ -1,0 +1,87 @@
+{
+  "titles": {
+    "myAddresses": "My Addresses",
+    "addNewAddress": "Add New Address",
+    "noAddresses": "No addresses saved yet",
+    "firstAddress": "Add your first address",
+    "manageShipping": "Manage your shipping locations",
+    "addressEditing": "Address Editing",
+    "newShipping": "New Shipping Addresss"
+  },
+  "buttons": {
+    "add": "Add New",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "save": "Save"
+  },
+  "messages": {
+    "noAddressesText": "Please add a shipping address to continue with your order."
+  },
+  "labels": {
+    "addressCount": "Manage your shipping locations ({count})"
+  },
+  "placeholders": {
+    "country": "Country",
+    "province": "Province",
+    "street": "Street",
+    "city": "City",
+    "postalCode": "Postal Code",
+    "receiverName": "Receiver Name",
+    "receiverPhone": "Receiver Phone"
+  },
+
+  "editableAddress": {
+    "labels": {
+      "country": "Country",
+      "province": "Province",
+      "city": "City",
+      "street": "Street",
+      "highway": "Highway",
+      "street1": "Street 1",
+      "street2": "Street 2",
+      "postalCode": "Postal Code",
+      "receiverName": "Receiver Name",
+      "receiverPhone": "Phone Number",
+      "isDefault": "Set as default address"
+    },
+    "placeholders": {
+      "country": "Enter Country",
+      "province": "Enter Province",
+      "city": "Enter city",
+      "street": "Enter street",
+      "highway": "Enter highway (optional)",
+      "street1": "Enter street 1 (optional)",
+      "street2": "Enter street 2 (optional)",
+      "postalCode": "7-10 digits",
+      "receiverName": "Enter receiver name",
+      "receiverPhone": "09*********"
+    },
+    "buttons": {
+      "addAddress": "Add Address",
+      "saveChanges": "Save Changes",
+      "cancel": "Cancel",
+      "discard": "Discard",
+      "setDefault": "Set as default",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "status": {
+      "default": "Default"
+    },
+    "messages": {
+      "postalCode": "Postal Code:",
+      "receiver": "Receiver:"
+    },
+    "errors": {
+      "countryRequired": "Country is required",
+      "provinceRequired": "Province is required",
+      "cityRequired": "City is required",
+      "streetRequired": "Street is required",
+      "postalRequired": "Postal code is required",
+      "postalInvalid": "Postal code must be 7–10 digits",
+      "receiverNameRequired": "Receiver name is required",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Phone must be 11 digits starting with 09"
+    }
+  }
+}

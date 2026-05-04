@@ -1,0 +1,48 @@
+{
+  "header": {
+    "deliveryInfo": "اطلاعات ارسال"
+  },
+  "titles": {
+    "firstAddress": "اولین آدرس خود را اضافه کنید",
+    "noAddresses": "هیچ آدرسی ذخیره نشده است",
+    "newShipping": "آدرس جدید"
+  },
+  "addressBox": {
+    "selectedAddress": "ارسال به آدرس انتخاب شده ",
+    "changeAddress": "تغییر آدرس",
+    "addresses": "آدرس‌های شما",
+    "addNew": "+ افزودن آدرس جدید"
+  },
+  "priceBox": {
+    "placeOrder": "ثبت سفارش",
+    "total": "مبلغ قابل پرداخت",
+    "yourSavings": "سود شما از خرید",
+    "unit": "تومان",
+    "shippingCost": "هزینه ارسال",
+    "productsPrice": "قیمت‌کالاها",
+    "free": "رایگان",
+    "notSpecified": "تعیین نشده"
+  },
+  "summary": {
+    "orderSummary": "جزئیات سفارش",
+    "unit": "تومان",
+    "Ethnicraft - CASALE Dining Chairs | Oak - 46 x 52 x 80cm": "اتنیکرافت - صندلی‌های ناهارخوری کازاله | چوب بلوط - ۴۶ × ۵۲ × ۸۰ سانتی‌متر",
+    "Ethnicraft - CASALE Dining Chairs | Oak - 46 x 52 x 70cm": "اتنیکرافت - صندلی‌های ناهارخوری کازاله | چوب بلوط - ۴۶ × ۵۲ × ۷۰ سانتی‌متر"
+  },
+  "confirmDialog": {
+    "cancel": "لغو",
+    "yesDelete": "حذف کن",
+
+    "removeItemConfirmMsg": "این محصول از سبد خرید حذف شود؟"
+  },
+  "shippingMethod": {
+    "title": "روش ارسال",
+    "air": "هوایی",
+    "ground": "زمینی",
+    "sea": "دریایی",
+    "SelectShippingMethod": "انتخاب روش ارسال"
+  },
+  "messages": {
+    "noAddressesText": "لطفا یک آدرس ارسال اضافه کنید تا ادامه دهید"
+  }
+}

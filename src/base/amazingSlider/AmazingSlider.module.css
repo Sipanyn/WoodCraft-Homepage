@@ -4,13 +4,13 @@
   height: 20rem; /* h-80 */
   padding: 1rem;
   border-radius: 0.75rem;
-  background-color: #8a6a47;
+  /* background-color: #8a6a47; */
   z-index: 0;
 }
 
-:global(.dark) .wrapper {
+/* :global(.dark) .wrapper {
   background-color: #404040;
-}
+} */
 
 .swiper {
   width: 100%;

@@ -1,0 +1,10 @@
+.custom_input {
+  -appearance: textfield;
+  outline: none;
+}
+
+.custom_input::-webkit-outer-spin-button,
+.custom_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

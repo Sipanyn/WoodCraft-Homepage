@@ -1,18 +1,18 @@
 import NavBar from "../navBar/NavBar";
-import HeaderSlider from "@/components/headerSlider/HeaderSlider";
+
+import StickyHeader from "../stickyHeader/StickyHeader";
 
 function Header() {
   return (
-    <header className=" flex flex-col gap-2">
+    <>
+      <header className="sticky top-0 z-50">
+        <StickyHeader />
+      </header>
       {/* navbar */}
-      <div className="hidden sm:block">
+      <div className="hidden sm:block container">
         <NavBar />
       </div>
-      {/* slider */}
-      <div>
-        <HeaderSlider />
-      </div>
-    </header>
+    </>
   );
 }
 

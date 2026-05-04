@@ -2,7 +2,7 @@
   padding: 20px;
   border: 8px;
   min-width: 300px;
-  width: fit-content;
+  width: 90%;
 }
 @media (max-width: 640px) {
   .modalStyle {

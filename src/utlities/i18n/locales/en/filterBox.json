@@ -1,0 +1,9 @@
+{
+  "wallet": "Wallet",
+  "tickets": "Tickets",
+  "orders": "Orders",
+  "balance": "Balance",
+  "ticket": "Open Tickets",
+  "order": "Total Orders",
+  "unit": "US $"
+}

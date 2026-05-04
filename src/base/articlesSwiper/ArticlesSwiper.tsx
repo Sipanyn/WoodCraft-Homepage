@@ -116,7 +116,9 @@ const ArticlesSwiper: React.FC<ArticlesSwiperProps> = () => {
             </div>
 
             {/* Title */}
-            <div className="flex flex-col gap-y-1 py-5 px-1">
+            <div
+              className={`flex flex-col gap-y-1 py-5 px-1 ${isFa ? "text-right" : "text-left"}`}
+            >
               <h2>{article.title}</h2>
             </div>
 

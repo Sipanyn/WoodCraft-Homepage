@@ -1,0 +1,47 @@
+{
+  "header": {
+    "deliveryInfo": "Delivery Information"
+  },
+  "titles": {
+    "firstAddress": "Add your first address",
+    "noAddresses": "No addresses saved yet",
+    "newShipping": "New Shipping Addresss"
+  },
+  "addressBox": {
+    "selectedAddress": "Selected delivery address",
+    "changeAddress": "Change address",
+    "addresses": "Your Addresses",
+    "addNew": "+ Add new address"
+  },
+  "priceBox": {
+    "placeOrder": "Place Order",
+    "total": "Total Payable",
+    "yourSavings": "Your Savings",
+    "unit": "US $",
+    "shippingCost": "Shipping Cost",
+    "productsPrice": "Products Price",
+    "free": "Free",
+    "notSpecified": "Not Specified"
+  },
+  "summary": {
+    "orderSummary": "Order Summary",
+    "unit": "US $",
+    "Ethnicraft - CASALE Dining Chairs | Oak - 46 x 52 x 80cm": "Ethnicraft - CASALE Dining Chairs | Oak - 46 x 52 x 80cm",
+    "Ethnicraft - CASALE Dining Chairs | Oak - 46 x 52 x 70cm": "Ethnicraft - CASALE Dining Chairs | Oak - 46 x 52 x 70cm"
+  },
+  "confirmDialog": {
+    "cancel": "Cancel",
+    "yesDelete": "Yes Delete",
+    "removeItemConfirmMsg": "Are you sure you want to remove this item?"
+  },
+  "shippingMethod": {
+    "title": "Shipping Method",
+    "air": "Air",
+    "ground": "Ground",
+    "sea": "Sea",
+    "SelectShippingMethod": "Select shipping method"
+  },
+  "messages": {
+    "noAddressesText": "Please add a shipping address to continue with your order."
+  }
+}

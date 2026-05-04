@@ -1,0 +1,34 @@
+{
+  "messages": {
+    "messages": "Messages",
+    "quantity": "Quantity:",
+    "deliveryCode": "Delivery Code",
+    "estimatedDelivery": "Estimated Delivery:",
+    "deliveredOn": "Delivered on:",
+    "canceledOn": "Canceled on:"
+  },
+
+  "msg-inprogress-1": {
+    "headerTitle": "Your order is on the way!",
+    "headerSubtitle": "Your order will arrive soon. Please have your delivery code ready for the agent.",
+    "productName": "Modern Chair"
+  },
+
+  "msg-delivered-1": {
+    "headerTitle": "Your order has been delivered!",
+    "headerSubtitle": "Thank you for your purchase. We hope you enjoy your new Modern Chair!",
+    "productName": "Modern Chair"
+  },
+
+  "msg-returned-1": {
+    "headerTitle": "Your return is being processed.",
+    "headerSubtitle": "We have received your return request for the Modern Chair. It should be processed within 3-5 business days.",
+    "productName": "Modern Chair"
+  },
+
+  "msg-canceled-1": {
+    "headerTitle": "Your order has been canceled.",
+    "headerSubtitle": "Your order for the Modern Chair has been canceled. If this was a mistake, please contact support.",
+    "productName": "Modern Chair"
+  }
+}

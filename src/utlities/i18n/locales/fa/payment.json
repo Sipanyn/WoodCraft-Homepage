@@ -1,0 +1,44 @@
+{
+  "header": {
+    "payment": "پرداخت "
+  },
+  "methods": {
+    "select": "انتخاب روش پرداخت",
+    "online": "پرداخت اینترنتی",
+    "anyBank": "پرداخت آنلاین با تمامی کارت‌های بانکی",
+    "wallet": "کیف پول",
+    "balance": "موجودی",
+    "installment": "پرداخت اعتباری",
+    "payInIns": "پرداخت در چند قسط",
+    "installment1": "طرح یک‌ماهه",
+    "installment6": "طرح شش‌ماهه",
+    "installmentOneTime": "پرداخت یک‌جا",
+    "installment6Times": "پرداخت در ۶ ماه"
+  },
+  "discount": {
+    "discountCode": "کد تخفیف",
+    "placeHolder": "اینجا بنویسید",
+    "apply": "ثبت"
+  },
+  "giftCard": {
+    "giftCard": "کارت هدیه",
+    "placeHolder": "افزودن کارت هدیه",
+    "apply": "ثبت"
+  },
+  "priceBox": {
+    "placeOrder": "ثبت سفارش",
+    "total": "مبلغ قابل پرداخت",
+    "yourSavings": "سود شما از خرید",
+    "unit": "تومان",
+    "shippingCost": "هزینه ارسال",
+    "productsPrice": "قیمت‌کالاها",
+    "totalDiscount": "تخفیف کالاها"
+  },
+  "orderSummary": {
+    "orderSummary": "خلاصه سفارش",
+    "shipmentPrice": "مبلغ مرسوله",
+    "details": "جزيیات مرسوله",
+    "close": "بستن",
+    "unit": "تومان"
+  }
+}

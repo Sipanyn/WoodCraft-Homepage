@@ -12,7 +12,9 @@ type AmazingSliderProps = {
 const AmazingSlider: React.FC<AmazingSliderProps> = ({ children }) => {
   return (
     <section className="mx-4 lg:container mt-20">
-      <div className={styles.wrapper}>
+      <div
+        className={`${styles.wrapper} bg-linear-to-r from-wood to-wood-dark dark:bg-none dark:bg-neutral-700`}
+      >
         <Swiper
           dir="ltr"
           modules={[Navigation]}

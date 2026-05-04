@@ -13,6 +13,8 @@ import Master from "@/svgs/Master.svg?react";
 import { clx } from "@/utlities/clx";
 import { useTranslation } from "react-i18next";
 import i18n from "@/utlities/i18n";
+import { Link, useNavigate } from "react-router-dom";
+const isFa = i18n.language === "fa";
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -21,12 +23,13 @@ const Footer: React.FC = () => {
       behavior: "smooth", // smooth scroll
     });
   };
+  const navigate = useNavigate();
   const { t } = useTranslation("footer");
   const isFa = i18n.language === "fa";
 
   return (
     <div>
-      <div className="relative w-full bg-wood-dark dark:bg-zinc-900 text-white rounded-2xl p-5 lg:p-9">
+      <div className="relative w-full bg-linear-to-r from-wood to-wood-dark dark:bg-none dark:bg-zinc-900 text-white rounded-2xl p-5 lg:p-9 my-12">
         {/* TOP GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* ABOUT */}
@@ -55,10 +58,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               {[t("home"), t("shop"), t("callUs"), t("faq")].map((item) => (
                 <li
+                  onClick={() => navigate(item === "home" ? "/" : "")}
                   key={item}
-                  className={`${isFa ? "hover:-translate-x-2" : "hover:translate-x-2"} transition-all duration-300`}
+                  className={`${isFa ? "hover:-translate-x-2" : "hover:translate-x-2"} transition-all duration-300 cursor-pointer`}
                 >
-                  <a href="#">{item}</a>
+                  {item}
                 </li>
               ))}
             </ul>
@@ -112,11 +116,11 @@ const Footer: React.FC = () => {
         </div>
 
         {/* BACK TO TOP */}
-        <div
-          onClick={scrollToTop}
-          className="mt-10 flex justify-center lg:justify-end"
-        >
-          <button className="ring-1 ring-white px-4 py-2 rounded-lg flex items-center gap-2 hover:scale-105 transition cursor-pointer active:scale-95">
+        <div className="mt-10 flex justify-center lg:justify-end">
+          <button
+            onClick={scrollToTop}
+            className="ring-1 ring-white px-4 py-2 rounded-lg flex items-center gap-2 hover:scale-105 transition cursor-pointer active:scale-95"
+          >
             {t("backToTop")}
             <i className="bi bi-chevron-up"></i>
           </button>
@@ -127,7 +131,10 @@ const Footer: React.FC = () => {
           className={clx(
             styles.bottom_bar,
             "mt-10 rounded-2xl px-4 py-5 lg:px-6 lg:py-4",
-            "flex flex-col lg:flex-row items-center gap-5 lg:gap-0 justify-between bg-wood/50 dark:bg-neutral-700",
+            "flex flex-col lg:flex-row items-center gap-5 lg:gap-0 justify-between dark:bg-none dark:bg-neutral-800",
+            isFa
+              ? "bg-linear-to-r from-wood to-wood-dark"
+              : "bg-linear-to-l from-wood to-wood-dark",
           )}
         >
           {/* LOGO */}
@@ -139,33 +146,14 @@ const Footer: React.FC = () => {
           </a>
 
           {/* NEWSLETTER */}
-          <div className="w-full max-w-md bg-gray-200 dark:bg-gray-300 rounded-2xl p-1.5 flex items-center transition focus-within:ring-2 focus-within:ring-wood">
+          <div className="w-full max-w-md bg-white dark:bg-zinc-900 rounded-xl   p-1.5 flex items-center transition focus-within:ring-2 focus-within:ring-wood">
             <input
               type="email"
               placeholder={t("newsLetterPlaceHolder")}
-              className="
-      flex-1
-      min-w-0
-      bg-transparent
-      px-3 sm:py-2
-      text-sm
-      placeholder:text-gray-400
-      outline-none
-      text-black
-      overflow-hidden
-      whitespace-nowrap
-      text-ellipsis
-    "
+              className="flex-1 min-w-0  bg-transparent   px-3 sm:py-2  text-sm  placeholder:text-gray-400   outline-none   text-black   dark:text-white overflow-hidden  whitespace-nowrap  text-ellipsis"
             />
             <button
-              className="
-      shrink-0
-      px-4 py-2
-      bg-wood text-black
-      rounded-xl text-sm font-DanaMedium
-      hover:brightness-110 active:scale-95
-      hover:scale-105
-      transition
+              className="  shrink-0   px-6 py-2  bg-linear-to-r from-wood to-wood-dark text-white  dark:text-white rounded-md text-sm font-DanaMedium   hover:brightness-110 active:scale-95  transition cursor-pointer
     "
             >
               {t("submit")}

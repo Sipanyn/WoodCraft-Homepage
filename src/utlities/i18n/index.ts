@@ -49,6 +49,36 @@ import fahamburgerMenu from "./locales/fa/hamburgerMenu.json";
 import encart from "./locales/en/cart.json";
 import facart from "./locales/fa/cart.json";
 
+import enmainCart from "./locales/en/mainCart.json";
+import famainCart from "./locales/fa/mainCart.json";
+
+import ensideMenu from "./locales/en/sideMenu.json";
+import fasideMenu from "./locales/fa/sideMenu.json";
+
+import enfilterBox from "./locales/en/filterBox.json";
+import fafilterBox from "./locales/fa/filterBox.json";
+
+import enorderStatus from "./locales/en/orderStatus.json";
+import faorderStatus from "./locales/fa/orderStatus.json";
+
+import enmessageData from "./locales/en/messageData.json";
+import famessageData from "./locales/fa/messageData.json";
+
+import enbookmarks from "./locales/en/bookmarks.json";
+import fabookmarks from "./locales/fa/bookmarks.json";
+
+import enaddresses from "./locales/en/addresses.json";
+import faaddresses from "./locales/fa/addresses.json";
+
+import enorderHistory from "./locales/en/orderHistory.json";
+import faorderHistory from "./locales/fa/orderHistory.json";
+
+import enshipping from "./locales/en/shipping.json";
+import fashipping from "./locales/fa/shipping.json";
+
+import enpayment from "./locales/en/payment.json";
+import fapayment from "./locales/fa/payment.json";
+
 i18n.use(initReactI18next).init({
   resources: {
     en: {
@@ -68,6 +98,16 @@ i18n.use(initReactI18next).init({
       sticky: ensticky,
       hamburgerMenu: enhamburgerMenu,
       cart: encart,
+      mainCart: enmainCart,
+      sideMenu: ensideMenu,
+      filterBox: enfilterBox,
+      orderStatus: enorderStatus,
+      messageData: enmessageData,
+      bookmarks: enbookmarks,
+      addresses: enaddresses,
+      orderHistory: enorderHistory,
+      shipping: enshipping,
+      payment: enpayment,
     },
     fa: {
       footer: frfooter,
@@ -86,6 +126,16 @@ i18n.use(initReactI18next).init({
       sticky: fasticky,
       hamburgerMenu: fahamburgerMenu,
       cart: facart,
+      mainCart: famainCart,
+      sideMenu: fasideMenu,
+      filterBox: fafilterBox,
+      orderStatus: faorderStatus,
+      messageData: famessageData,
+      bookmarks: fabookmarks,
+      addresses: faaddresses,
+      orderHistory: faorderHistory,
+      shipping: fashipping,
+      payment: fapayment,
     },
   },
 
@@ -95,6 +145,10 @@ i18n.use(initReactI18next).init({
   defaultNS: "common",
   interpolation: {
     escapeValue: false,
+  },
+  detection: {
+    order: ["localStorage", "navigator"],
+    caches: ["localStorage"], // IMPORTANT
   },
 });
 

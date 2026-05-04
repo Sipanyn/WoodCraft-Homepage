@@ -43,12 +43,13 @@
     @apply w-full mx-auto;
 
     /* Base max-width */
-    max-width: 360px;
+    max-width: 98%;
   }
 
   @media (min-width: 480px) {
     .container {
-      max-width: 480px;
+      /* max-width: 480px; */
+      max-width: 100%;
       padding-inline: 1rem;
     }
   }
@@ -68,7 +69,7 @@
 
   @media (min-width: 1024px) {
     .container {
-      max-width: 1024px;
+      max-width: 95%;
       padding-inline: 2rem;
     }
   }
@@ -182,4 +183,60 @@ body::-webkit-scrollbar-thumb {
 }
 body::-webkit-scrollbar-thumb:hover {
   background: #a6a7a8;
+}
+/* confirm dialog animations */
+@layer utilities {
+  .dialog-overlay-show {
+    animation: overlayShow 200ms ease-out forwards;
+  }
+  .dialog-overlay-hide {
+    animation: overlayHide 200ms ease-in forwards;
+  }
+
+  .dialog-content-show {
+    animation: contentShow 200ms ease-out forwards;
+  }
+  .dialog-content-hide {
+    animation: contentHide 200ms ease-in forwards;
+  }
+
+  @keyframes overlayShow {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes overlayHide {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes contentShow {
+    from {
+      opacity: 0;
+      /* transform: translate(-50%, -50%) scale(0.95); */
+    }
+    to {
+      opacity: 1;
+      /* transform: translate(-50%, -50%) scale(1); */
+    }
+  }
+
+  @keyframes contentHide {
+    from {
+      opacity: 1;
+      /* transform: translate(-50%, -50%) scale(1); */
+    }
+    to {
+      opacity: 0;
+      /* transform: translate(-50%, -50%) scale(0.95); */
+    }
+  }
 }

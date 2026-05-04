@@ -1,21 +1,20 @@
 import i18n from "@/utlities/i18n";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const NavBar: React.FC = () => {
   const { t } = useTranslation("navBar");
   const isFa = i18n.language === "fa";
   return (
     <nav
-      className={`w-fit  sm:size-full bg-wood-dark dark:bg-neutral-700 rounded-xl px-2 py-1 sm:rounded-3xl  sm:px-4 sm:py-3`}
+      className={`w-fit  sm:size-full bg-linear-to-r from-wood to-wood-dark dark:bg-neutral-700 rounded-xl px-2 py-1 sm:rounded-3xl  sm:px-4 sm:py-3`}
     >
       <div className="flex items-center justify-start">
         {/* Desktop menu */}
         <ul className="hidden sm:flex flex-row gap-10 text-white transition-all duration-500 px-4">
           <li className="relative group">
-            <a href="#" className="relative">
-              {t("home")}
-              <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 h-[1.5px] w-0 bg-stone-100/50 transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            <Link to="/">{t("home")}</Link>
+            <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 h-[1.5px] w-0 bg-stone-100/50 transition-all duration-300 group-hover:w-full"></span>
           </li>
 
           <li className="relative group transition-all duration-500">

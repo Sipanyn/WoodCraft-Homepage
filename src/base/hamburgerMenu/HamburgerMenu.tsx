@@ -2,6 +2,7 @@ import { useState, type Dispatch, type SetStateAction } from "react";
 import styles from "./HamburgerMenu.module.css";
 import { useTranslation } from "react-i18next";
 import i18n from "@/utlities/i18n";
+import { Link } from "react-router-dom";
 type HamburgerMenuProps = {
   menuOpen: boolean;
   toggleLanguage: () => void;
@@ -54,17 +55,18 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
       {/* Menu Links */}
       <nav className="flex flex-col gap-2 px-5 py-6 font-medium">
         {/* Home */}
-        <div
+        <Link
+          to="/"
           onClick={() => setMenuOpen(false)}
           className="flex items-center gap-3 cursor-pointer
-      px-4 py-2.5 rounded-xl
-      hover:bg-gray-200/60 dark:hover:bg-neutral-800
-      hover:text-wood dark:hover:text-white
-      transition-all duration-200"
+  px-4 py-2.5 rounded-xl
+  hover:bg-gray-200/60 dark:hover:bg-neutral-800
+  hover:text-wood dark:hover:text-white
+  transition-all duration-200"
         >
           <i className="bi bi-house text-lg"></i>
           <p>{t("home")}</p>
-        </div>
+        </Link>
 
         {/* Shop */}
         <div
@@ -93,7 +95,8 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
         </div>
 
         {/* Account */}
-        <button
+        <Link
+          to="/profile"
           onClick={() => setMenuOpen(false)}
           className="flex items-center gap-3
       px-4 py-2.5 rounded-xl
@@ -103,7 +106,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
         >
           <i className="bi bi-person text-lg"></i>
           <p>{t("account")}</p>
-        </button>
+        </Link>
 
         {/* Language */}
         <button

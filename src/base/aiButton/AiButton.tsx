@@ -16,7 +16,7 @@ const AiButton = (props: AiButtonProps) => {
     p-2 sm:px-3 sm:py-2
     rounded-full
     shadow-lg
-    hover:bg-wood hover:dark:bg-wood/90
+    hover:bg-linear-to-r from-wood to-wood-dark
     transition-all duration-300
     hover:scale-105
     focus:outline-none focus:ring-2 focus:ring-wood/60

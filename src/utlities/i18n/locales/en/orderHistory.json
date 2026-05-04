@@ -1,0 +1,47 @@
+{
+  "orders": {
+    "historyTitle": "Order History",
+    "orderProgress": "Order progress",
+    "searchPlaceholder": "Search your order",
+    "startTyping": "Start typing to search your orders",
+    "couldntFind": "We couldn't find this product",
+
+    "tabs": {
+      "inProgress": "In Progress",
+      "delivered": "Delivered",
+      "canceled": "Canceled",
+      "returned": "Returned"
+    },
+
+    "labels": {
+      "orderCode": "Order Code:",
+      "price": "Price:",
+      "viewInvoice": "View Invoice"
+    },
+
+    "empty": {
+      "inProgress": "You don't have any in‑progress orders.",
+      "canceled": "You don't have any canceled orders.",
+      "delivered": "You don't have any delivered orders.",
+      "returned": "You don't have any returned orders."
+    },
+    "status": {
+      "inProgress": "In Progress",
+      "canceled": "Canceled",
+      "delivered": "Delivered",
+      "returned": "Returned"
+    },
+    "progress": {
+      "confirmed": "Order Confirmed",
+      "inProduction": "In Production",
+      "qualityCheck": "Quality Check",
+      "shipped": "Shipped",
+      "delivered": "Delivered"
+    },
+    "factories": {
+      "tehranWoodFactory": "Tehran Wood Factory",
+      "shirazWoodFactory": "Shiraz Wood Factory",
+      "tabrizWoodFactory": "Tabriz Wood Factory"
+    }
+  }
+}

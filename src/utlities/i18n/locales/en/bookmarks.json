@@ -1,0 +1,15 @@
+{
+  "bookmarks": {
+    "title": "Bookmarks",
+    "emptyTitle": "Your bookmark list is empty.",
+    "emptySubtitle": "Add some items you like!",
+    "add": "Add to Cart",
+    "unit": " US $"
+  },
+  "products": {
+    "chair": {
+      "casale80": "Ethnicraft - CASALE Dining Chairs | Oak - 46 x 52 x 80cm",
+      "casale70": "Ethnicraft - CASALE Dining Chairs | Oak - 46 x 52 x 70cm"
+    }
+  }
+}

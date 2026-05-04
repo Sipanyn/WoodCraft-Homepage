@@ -94,11 +94,11 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
           {viewAllHref && (
             <a
               href={viewAllHref}
-              className="group shadow-xl text-sm md:text-base flex gap-x-1.5 items-center px-2 h-10 md:px-3 text-white bg-wood dark:bg-neutral-700 rounded-xl"
+              className="group shadow-xl text-sm md:text-base flex gap-x-1.5 items-center px-2 h-10 md:px-3 text-white bg-linear-to-r from-wood to-wood-dark dark:bg-none dark:bg-neutral-700 rounded-xl"
             >
               <p>{t("viewAll")}</p>
               <span
-                className={`w-7 h-7 rounded-full bg-wood-light dark:bg-neutral-400 flex-center transition-transform duration-300 flex justify-center items-center ${
+                className={`w-7 h-7 rounded-full bg-wood-light/50 dark:bg-neutral-400 flex-center transition-transform duration-300 flex justify-center items-center ${
                   isFa
                     ? "md:group-hover:-translate-x-1"
                     : "md:group-hover:translate-x-1"

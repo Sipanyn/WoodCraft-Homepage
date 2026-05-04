@@ -1,0 +1,87 @@
+{
+  "titles": {
+    "myAddresses": "آدرس‌های من",
+    "addNewAddress": "افزودن آدرس جدید",
+    "noAddresses": "هیچ آدرسی ذخیره نشده است",
+    "firstAddress": "اولین آدرس خود را اضافه کنید",
+    "manageShipping": "مدیریت مکان‌های ارسال شما",
+    "addressEditing": "ویرایش آدرس",
+    "newShipping": "آدرس جدید"
+  },
+  "buttons": {
+    "add": "افزودن",
+    "cancel": "لغو",
+    "delete": "حذف",
+    "save": "ذخیره"
+  },
+  "messages": {
+    "noAddressesText": "لطفا یک آدرس ارسال اضافه کنید تا ادامه دهید."
+  },
+  "labels": {
+    "addressCount": "مدیریت مکان‌های ارسال شما ({count})"
+  },
+  "placeholders": {
+    "country": "کشور",
+    "province": "استان",
+    "street": "خیابان",
+    "city": "شهر",
+    "postalCode": "کد پستی",
+    "receiverName": "نام دریافت‌کننده",
+    "receiverPhone": "تلفن دریافت‌کننده"
+  },
+
+  "editableAddress": {
+    "labels": {
+      "country": "کشور",
+      "province": "استان",
+      "city": "شهر",
+      "street": "خیابان",
+      "highway": "بزرگراه",
+      "street1": "خیابان فرعی ۱",
+      "street2": "خیابان فرعی ۲",
+      "postalCode": "کد پستی",
+      "receiverName": "نام گیرنده",
+      "receiverPhone": "شماره تلفن",
+      "isDefault": "این آدرس را به عنوان پیش‌فرض تنظیم کن"
+    },
+    "placeholders": {
+      "country": "نام کشور را وارد کنید",
+      "province": "نام استان را وارد کنید",
+      "city": "نام شهر را وارد کنید",
+      "street": "نام خیابان را وارد کنید",
+      "highway": "نام بزرگراه (اختیاری)",
+      "street1": "خیابان فرعی ۱ (اختیاری)",
+      "street2": "خیابان فرعی ۲ (اختیاری)",
+      "postalCode": "۷ تا ۱۰ رقم",
+      "receiverName": "نام گیرنده را وارد کنید",
+      "receiverPhone": "۰۹*********"
+    },
+    "buttons": {
+      "addAddress": "افزودن آدرس",
+      "saveChanges": "ذخیره تغییرات",
+      "cancel": "لغو",
+      "discard": "بی‌خیال تغییرات",
+      "setDefault": "تنظیم به عنوان پیش‌فرض",
+      "edit": "ویرایش",
+      "delete": "حذف"
+    },
+    "status": {
+      "default": "پیش‌فرض"
+    },
+    "messages": {
+      "postalCode": "کد پستی:",
+      "receiver": "گیرنده:"
+    },
+    "errors": {
+      "countryRequired": "وارد کردن کشور الزامی است",
+      "provinceRequired": "وارد کردن استان الزامی است",
+      "cityRequired": "وارد کردن شهر الزامی است",
+      "streetRequired": "وارد کردن خیابان الزامی است",
+      "postalRequired": "کد پستی الزامی است",
+      "postalInvalid": "کد پستی باید بین ۷ تا ۱۰ رقم باشد",
+      "receiverNameRequired": "نام گیرنده الزامی است",
+      "phoneRequired": "شماره تلفن الزامی است",
+      "phoneInvalid": "شماره تلفن باید ۱۱ رقم و با ۰۹ شروع شود"
+    }
+  }
+}

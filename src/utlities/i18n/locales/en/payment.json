@@ -1,0 +1,44 @@
+{
+  "header": {
+    "payment": "Payment"
+  },
+  "methods": {
+    "select": "Select Payment Method",
+    "online": "Online Paymnet",
+    "anyBank": "Pay with any bank card",
+    "wallet": "Wallet",
+    "balance": "Balance",
+    "installment": "Installment Payment",
+    "payInIns": "Pay in installments",
+    "installment1": "1‑month plan",
+    "installmentOneTime": "One-time payment",
+    "installment6Times": "Pay in 6 months",
+    "installment6": "6‑month plan"
+  },
+  "discount": {
+    "discountCode": "Discount Code",
+    "placeHolder": "Enter your discount code",
+    "apply": "Apply"
+  },
+  "giftCard": {
+    "giftCard": "Gift Card",
+    "placeHolder": "Enter gift card code",
+    "apply": "Apply"
+  },
+  "priceBox": {
+    "placeOrder": "Place Order",
+    "total": "Total Payable",
+    "yourSavings": "Your Savings",
+    "unit": "US $",
+    "shippingCost": "Shipping Cost",
+    "productsPrice": "Products Price",
+    "totalDiscount": "Product(s) Discount"
+  },
+  "orderSummary": {
+    "orderSummary": "Order Summary",
+    "shipmentPrice": "Shipment Price",
+    "details": "Details",
+    "close": "Close",
+    "unit": "US $"
+  }
+}

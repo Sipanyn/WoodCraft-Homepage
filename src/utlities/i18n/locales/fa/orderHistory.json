@@ -1,0 +1,47 @@
+{
+  "orders": {
+    "historyTitle": "تاریخچه سفارش‌ها",
+    "orderProgress": "وضعیت سفارش",
+    "searchPlaceholder": "سفارش خود را جست‌و‌جو کنید",
+    "startTyping": "برای جستجوی سفارش‌ها شروع به تایپ کنید",
+    "couldntFind": "محصولی با این نام پیدا نشد",
+
+    "tabs": {
+      "inProgress": "در حال پردازش",
+      "delivered": "تحویل داده شده",
+      "canceled": "لغو شده",
+      "returned": "مرجوع شده"
+    },
+
+    "labels": {
+      "orderCode": "کد سفارش:",
+      "price": "قیمت:",
+      "viewInvoice": "مشاهده فاکتور"
+    },
+
+    "empty": {
+      "inProgress": "شما هیچ سفارش در حال پردازش ندارید.",
+      "canceled": "شما هیچ سفارش لغو شده‌ای ندارید.",
+      "delivered": "شما هیچ سفارش تحویل داده‌شده‌ای ندارید.",
+      "returned": "شما هیچ سفارش مرجوع‌شده‌ای ندارید."
+    },
+    "status": {
+      "inProgress": "در حال پردازش",
+      "canceled": "لغو شده",
+      "delivered": "تحویل داده شده",
+      "returned": "مرجوع شده"
+    },
+    "progress": {
+      "confirmed": "سفارش تایید شد",
+      "inProduction": "در حال تولید",
+      "qualityCheck": "کنترل کیفیت",
+      "shipped": "ارسال شد",
+      "delivered": "تحویل شد"
+    },
+    "factories": {
+      "tehranWoodFactory": "کارخانه چوب تهران",
+      "shirazWoodFactory": "کارخانه چوب شیراز",
+      "tabrizWoodFactory": "کارخانه چوب تبریز"
+    }
+  }
+}

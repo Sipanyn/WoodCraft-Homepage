@@ -53,16 +53,15 @@ const Features: React.FC = () => {
           {/* Icon */}
           <div
             className="
-              flex items-center justify-center
-              w-12 h-12
-              rounded-xl
-              bg-gray-100 dark:bg-zinc-800
-              text-gray-700 dark:text-gray-200
-              transition-all duration-300
-              group-hover:bg-wood group-hover:text-white
-              group-pointer
-            
-            "
+    flex items-center justify-center
+    w-12 h-12
+    rounded-xl
+    bg-linear-to-r from-wood to-wood-dark
+    dark:bg-none dark:bg-zinc-800
+    text-white dark:text-gray-200
+    transition-all duration-300
+    group-hover:bg-linear-to-r group-hover:from-wood group-hover:to-wood-dark
+  "
           >
             {feature.icon}
           </div>

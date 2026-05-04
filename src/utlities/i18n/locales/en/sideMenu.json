@@ -1,0 +1,9 @@
+{
+  "dashboard": "Dashboard",
+  "orders": "Orders",
+  "bookmarks": "Bookmarks",
+  "addresses": "Addresses",
+  "messages": "Messages",
+  "logout": "Log Out",
+  "save": "Save"
+}
